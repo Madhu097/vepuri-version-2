@@ -620,6 +620,7 @@ body::before {
   object-fit: cover;
   display: block;
   filter: saturate(.95) contrast(1.04);
+  border-radius: 20px;
 }
 
 .page-about .av-float-card {

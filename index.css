@@ -991,6 +991,10 @@ section[style*="background: var(--green)"] em {
   overflow: hidden
 }
 
+#about .eye {
+  color: var(--kicker-color) !important;
+}
+
 #about::before {
   content: '';
   position: absolute;
@@ -3933,6 +3937,7 @@ section[style*="background: var(--green)"] em {
   text-decoration: none;
   font-size: 14px;
   color: #1a140f;
+  font-family: 'Spectral', serif;
   font-weight: 600;
   transition: color 0.3s;
   display: flex;
