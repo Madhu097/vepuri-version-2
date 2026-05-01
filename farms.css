@@ -286,7 +286,7 @@
 /* 4. Certifications - CREAM */
 .cert-bar {
   padding: 100px 8%;
-  background-color: var(--farm-cream);
+  background-color: var(--farm-cream-dark);
   color: var(--farm-text);
 }
 

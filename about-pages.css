@@ -1747,7 +1747,7 @@ body::before {
   line-height: 1;
   letter-spacing: -0.02em;
   font-family: var(--site-font) !important;
-  text-transform: uppercase;
+  text-transform: none;
   color: #fff;
   opacity: 1;
   font-weight: 500;
@@ -1991,7 +1991,7 @@ body::before {
   font-family: var(--site-font), serif;
   font-size: clamp(32px, 4.5vw, 52px);
   color: #4c2318;
-  text-transform: uppercase;
+  text-transform: none;
   line-height: 1;
 }
 

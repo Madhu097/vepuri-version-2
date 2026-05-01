@@ -12,6 +12,16 @@
   --kicker-color: #6b3828;
 }
 
+/* PERFORMANCE: Render segments only when visible */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+}
+
+#hero, nav, footer {
+  content-visibility: visible;
+}
+
 * {
   margin: 0;
   padding: 0;
