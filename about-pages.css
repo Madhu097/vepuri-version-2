@@ -9,6 +9,7 @@
   --black: #0a0604;
   --site-font: 'Cormorant Garamond', serif;
   --body-font: 'Outfit', sans-serif;
+  --accent-font: 'Spectral', serif;
   --kicker-color: #6b3828;
 }
 
@@ -69,22 +70,15 @@ h3 em,
 
 .a-eye,
 .av-eye {
-  font-family:var(--accent-font) !important;
-  text-transform: none;
+  font-family: var(--accent-font) !important;
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.15em;
   font-style: normal;
   display: block;
   margin-bottom: 12px;
-  color: #6b3828;
-}
-
-.av-eye {
-  font-size: 22px !important;
-  font-weight: 700 !important;
-  margin-bottom: 20px !important;
-  letter-spacing: 0.05em !important;
+  color: var(--kicker-color);
 }
 
 * {

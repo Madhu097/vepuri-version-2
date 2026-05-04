@@ -119,12 +119,6 @@ animateHeroCounters();
   const DAILY_TARGET = 17000;
   const BASE_TOTAL = 25000000; // 2.5 Crore — existing historical total
   const START_DATE = new Date(2026, 3, 25); // April 25, 2026 (month is 0-indexed)
-  const SECONDS_IN_DAY = 86400;
-
-  function secondsSinceMidnight() {
-    const now = new Date();
-    return now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-  }
 
   function daysSinceStart() {
     const now = new Date();
@@ -144,8 +138,23 @@ animateHeroCounters();
   }
 
   function updateCounters() {
-    const elapsed = secondsSinceMidnight();
-    const dailyCount = Math.floor((elapsed / SECONDS_IN_DAY) * DAILY_TARGET);
+    const now = new Date();
+    const currentTimeInSeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+    
+    const startSeconds = 6 * 3600; // 6 AM
+    const endSeconds = 23 * 3600;  // 11 PM
+    
+    let dailyCount = 0;
+    if (currentTimeInSeconds >= endSeconds) {
+      dailyCount = DAILY_TARGET;
+    } else if (currentTimeInSeconds >= startSeconds) {
+      const activeSeconds = currentTimeInSeconds - startSeconds;
+      const totalActiveDuration = endSeconds - startSeconds;
+      dailyCount = Math.floor((activeSeconds / totalActiveDuration) * DAILY_TARGET);
+    } else {
+      dailyCount = 0;
+    }
+
     const completedDays = daysSinceStart();
     const currentTotal = BASE_TOTAL + (completedDays * DAILY_TARGET) + dailyCount;
 
@@ -282,155 +291,7 @@ const co = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
 
-// -- FRESH AGRICULTURAL CANVAS (Agriculture/Coconut Theme) --
-const canvas = document.getElementById('sphCanvas');
-const ctx = canvas.getContext('2d');
-let W, H, cx, cy, time = 0;
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function resize() {
-  W = canvas.width = canvas.offsetWidth;
-  H = canvas.height = canvas.offsetHeight;
-  cx = W / 2;
-  cy = H / 2;
-}
-resize();
-window.addEventListener('resize', resize, { passive: true });
-
-// Agricultural Color Palettes (Greens, Creams, Soft Whites)
-const colors = ['#96AC38', '#D7D5CE', '#FFFFFF', '#606C38'];
-
-const particles = Array.from({ length: prefersReducedMotion ? 70 : 130 }, () => ({
-  x: Math.random(),
-  y: Math.random(),
-  size: 0.3 + Math.random() * 1.8,
-  speed: 0.00015 + Math.random() * 0.0008,
-  opacity: 0.1 + Math.random() * 0.8,
-  drift: (Math.random() - 0.5) * 0.00015,
-  pulse: Math.random() * Math.PI * 2,
-  pulseSpeed: 0.01 + Math.random() * 0.02,
-  color: colors[Math.floor(Math.random() * colors.length)]
-}));
-
-let canvasVisible = false;
-const observer = new IntersectionObserver(entries => {
-  canvasVisible = entries[0].isIntersecting;
-  if (canvasVisible && !document.hidden) {
-    startCanvasLoop();
-  } else {
-    stopCanvasLoop();
-  }
-}, { threshold: 0.1 });
-observer.observe(canvas);
-
-let rafId = null;
-let lastFrameTime = 0;
-const frameInterval = prefersReducedMotion ? 100 : 33;
-
-function draw(ts) {
-  if (!canvasVisible || document.hidden) {
-    rafId = null;
-    return;
-  }
-
-  if (ts - lastFrameTime < frameInterval) {
-    rafId = requestAnimationFrame(draw);
-    return;
-  }
-
-  lastFrameTime = ts;
-
-  time = ts / 1000;
-  ctx.clearRect(0, 0, W, H);
-
-  // 1. Draw Morning Sun (Agriculture Spotlight)
-  const sunX = cx;
-  const sunY = -80;
-
-  // Sun Core
-  const sunCore = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, 200);
-  sunCore.addColorStop(0, 'rgba(255, 255, 240, 0.45)'); // Soft morning sun
-  sunCore.addColorStop(0.3, 'rgba(150, 172, 56, 0.12)'); // Hint of green in the scatter
-  sunCore.addColorStop(1, 'rgba(0, 0, 0, 0)');
-  ctx.fillStyle = sunCore;
-  ctx.fillRect(0, 0, W, H);
-
-  // Natural Light Scatter
-  const flare = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, H * 1.5);
-  flare.addColorStop(0, 'rgba(150, 172, 56, 0.25)'); // Organic green scatter
-  flare.addColorStop(0.4, 'rgba(96, 108, 56, 0.04)');
-  flare.addColorStop(1, 'rgba(0, 0, 0, 0)');
-  ctx.fillStyle = flare;
-  ctx.fillRect(0, 0, W, H);
-
-  // 2. Cinematic Organic Particles (Pollen/Spores/Life)
-  particles.forEach((p, idx) => {
-    // Gentle upward drifting
-    p.y -= p.speed;
-    p.x += p.drift;
-
-    // Bounds wrap
-    if (p.y < -0.05) { p.y = 1.05; p.x = Math.random(); }
-    if (p.x < -0.05) p.x = 1.05;
-    if (p.x > 1.05) p.x = -0.05;
-
-    const x = p.x * W;
-    const y = p.y * H;
-
-    // Smooth shimmering
-    const shimmer = 0.5 + Math.sin(time * 2 + p.pulse) * 0.5;
-    const finalOpacity = p.opacity * (0.3 + shimmer * 0.7);
-
-    // Soft Bokeh Glow
-    const blurSize = p.size * (idx % 2 === 0 ? 6 : 3);
-    const particleGlow = ctx.createRadialGradient(x, y, 0, x, y, blurSize);
-    particleGlow.addColorStop(0, p.color + Math.floor(finalOpacity * 255).toString(16).padStart(2, '0'));
-    particleGlow.addColorStop(1, 'transparent');
-
-    ctx.beginPath();
-    ctx.arc(x, y, blurSize, 0, Math.PI * 2);
-    ctx.fillStyle = particleGlow;
-    ctx.fill();
-
-    // Organic Core
-    if (p.size > 0.8) {
-      ctx.beginPath();
-      ctx.arc(x, y, p.size * 0.6, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${finalOpacity * 0.8})`;
-      ctx.fill();
-    }
-  });
-
-  // 3. Natural Vignette (Earthy green bottom)
-  const vig = ctx.createLinearGradient(0, H * 0.6, 0, H);
-  vig.addColorStop(0, 'rgba(21, 29, 14, 0)');
-  vig.addColorStop(1, 'rgba(21, 29, 14, 0.9)'); // Matches new deep background #151d0e
-  ctx.fillStyle = vig;
-  ctx.fillRect(0, H * 0.6, W, H * 0.4);
-
-  rafId = requestAnimationFrame(draw);
-}
-
-function startCanvasLoop() {
-  if (rafId !== null || !canvasVisible || document.hidden) return;
-  rafId = requestAnimationFrame(draw);
-}
-
-function stopCanvasLoop() {
-  if (rafId === null) return;
-  cancelAnimationFrame(rafId);
-  rafId = null;
-}
-
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) {
-    stopCanvasLoop();
-    return;
-  }
-  startCanvasLoop();
-});
-
-startCanvasLoop();
 
 // -- FORM (FormSubmit.co via AJAX) --
 const enquiryForm = document.getElementById('enquiryForm');

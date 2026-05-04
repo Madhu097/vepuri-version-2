@@ -303,6 +303,12 @@
       margin-bottom: 3px;
       text-transform: uppercase;
       font-family: var(--site-font);
+      font-variant-numeric: lining-nums;
+    }
+
+    .num-font {
+      font-family: var(--body-font) !important;
+      font-variant-numeric: lining-nums;
     }
 
     .event-note {
@@ -583,16 +589,16 @@
       <!-- 2019 -->
       <article class="event right tone-red">
         <div class="event-content">
+          <div class="event-media">
+            <span class="accent"></span>
+            <img src="assets/journey/factory.jpeg" alt="Manufacturing Initiation" loading="lazy" decoding="async">
+          </div>
           <div class="event-copy">
             <div class="event-year">2019</div>
             <h3 class="event-title">Manufacturing Initiation</h3>
             <p class="event-note">Established the first coconut processing facility at Mallavalli, creating a foundation
               for controlled production and scalable operations.</p>
             <div class="event-place">Mallavalli Unit I</div>
-          </div>
-          <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/factory.jpeg" alt="Manufacturing Initiation" loading="lazy" decoding="async">
           </div>
         </div>
       </article>
@@ -617,16 +623,16 @@
       <!-- 2023 -->
       <article class="event right tone-red">
         <div class="event-content">
+          <div class="event-media">
+            <span class="accent"></span>
+            <img src="assets/journey/Unit 2.jpg" alt="Capacity Expansion" loading="lazy" decoding="async">
+          </div>
           <div class="event-copy">
             <div class="event-year">2023</div>
             <h3 class="event-title">Capacity Expansion</h3>
             <p class="event-note">Commisioned second manufacturing unit at Mallavalli to strengthen production
               capabilities and support increasing demand.</p>
             <div class="event-place">Mallavalli Unit II</div>
-          </div>
-          <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/Unit 2.jpg" alt="Capacity Expansion" loading="lazy" decoding="async">
           </div>
         </div>
       </article>
@@ -640,7 +646,7 @@
           </div>
           <div class="event-copy">
             <div class="event-year">2025</div>
-            <h3 class="event-title">India’s Ist coconut cafe</h3>
+            <h3 class="event-title">India’s 1'st coconut cafe</h3>
             <p class="event-note">Entered the consumer space with the launch of CocoMunzzz in Vijayawada, introducing
               coconut-based desserts and beverages.</p>
             <div class="event-place">Vijayawada</div>
@@ -651,16 +657,16 @@
       <!-- 2026 -->
       <article class="event right tone-red">
         <div class="event-content">
+          <div class="event-media">
+            <span class="accent"></span>
+            <img src="assets/journey/cafe.jpeg" alt="Café Expansion" loading="lazy" decoding="async">
+          </div>
           <div class="event-copy">
             <div class="event-year">2026</div>
             <h3 class="event-title">Café Expansion</h3>
             <p class="event-note">The CocoMunzzz concept expanded to Guntur, strengthening retail presence and direct
               connection with consumers.</p>
             <div class="event-place">Guntur</div>
-          </div>
-          <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/cafe.jpeg" alt="Café Expansion" loading="lazy" decoding="async">
           </div>
         </div>
       </article>
@@ -685,15 +691,15 @@
       <!-- 2026 (3) - NEW -->
       <article class="event right tone-red">
         <div class="event-content">
+          <div class="event-media">
+            <span class="accent"></span>
+            <img src="assets/journey/Vijayawada cafe .png" alt="Scaling Coconut Café Network" loading="lazy" decoding="async">
+          </div>
           <div class="event-copy">
             <div class="event-year">2026</div>
             <h3 class="event-title">Scaling Coconut Café Network</h3>
             <p class="event-note">Expanding Cocomunzzz - The Coconut Café across multiple locations through company-operated outlets to build a consistent and controlled retail presence.</p>
             <div class="event-place">Multi-Location Expansion</div>
-          </div>
-          <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/Vijayawada cafe .png" alt="Scaling Coconut Café Network" loading="lazy" decoding="async">
           </div>
         </div>
       </article>
@@ -804,13 +810,6 @@
       const DAILY_TARGET = 17000;
       const BASE_TOTAL = 25000000; // 2.5 Crore — existing historical total
       const START_DATE = new Date(2026, 3, 25); // April 25, 2026 (month is 0-indexed)
-      const SECONDS_IN_DAY = 86400;
-
-      function secondsSinceMidnight() {
-        const now = new Date();
-        return now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-      }
-
       function daysSinceStart() {
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -829,8 +828,23 @@
       }
 
       function updateCounters() {
-        const elapsed = secondsSinceMidnight();
-        const dailyCount = Math.floor((elapsed / SECONDS_IN_DAY) * DAILY_TARGET);
+        const now = new Date();
+        const currentTimeInSeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+        
+        const startSeconds = 6 * 3600; // 6 AM
+        const endSeconds = 23 * 3600;  // 11 PM
+        
+        let dailyCount = 0;
+        if (currentTimeInSeconds >= endSeconds) {
+          dailyCount = DAILY_TARGET;
+        } else if (currentTimeInSeconds >= startSeconds) {
+          const activeSeconds = currentTimeInSeconds - startSeconds;
+          const totalActiveDuration = endSeconds - startSeconds;
+          dailyCount = Math.floor((activeSeconds / totalActiveDuration) * DAILY_TARGET);
+        } else {
+          dailyCount = 0;
+        }
+
         const completedDays = daysSinceStart();
         const currentTotal = BASE_TOTAL + (completedDays * DAILY_TARGET) + dailyCount;
 
