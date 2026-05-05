@@ -34,6 +34,12 @@ function initHeroVideoPlayback() {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         heroVideo.play().catch(() => { });
+        // Fade in when ready
+        heroVideo.addEventListener('canplaythrough', () => {
+          heroVideo.classList.add('ready');
+        }, { once: true });
+        // Fallback if event doesn't fire
+        setTimeout(() => heroVideo.classList.add('ready'), 2000);
       } else {
         heroVideo.pause();
       }
