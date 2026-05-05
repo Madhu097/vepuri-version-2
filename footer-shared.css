@@ -17,174 +17,173 @@
 
 /* -- FOOTER -- */
 footer {
-  background: #f5ddb4;
-  padding: 72px 8% 28px;
-  border-top: 1px solid rgba(0, 0, 0, .12);
-  color: #14120f
+  background: var(--cream); /* Warm cream background */
+  padding: 80px 8% 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #1a1a1a;
 }
 
 .fg2 {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 52px;
-  margin-bottom: 52px
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* Re-balanced for 4 columns */
+  gap: 60px;
+  margin-bottom: 60px;
 }
 
 .f-logo {
   display: block;
-  width: clamp(180px, 22vw, 240px);
-  height: auto
+  width: 200px;
+  height: auto;
+  margin-bottom: 25px;
 }
 
 .fb-txt {
-  font-size: 13px;
-  color: var(--black);
-  line-height: 1.8;
-  margin-top: 18px;
-  max-width: 270px
+  font-family: var(--body-font);
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  max-width: 300px;
 }
 
 .fc h4 {
   font-family: var(--body-font);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: .02em;
-  text-transform: uppercase;
   color: #000;
-  margin-bottom: 22px
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .fc ul {
-  list-style: none
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .fc li {
-  margin-bottom: 11px;
-  font-family: var(--body-font);
+  margin-bottom: 12px;
 }
 
 .fc a {
   text-decoration: none;
-  font-size: 13px;
-  color: var(--black);
-  transition: color .2s
+  font-family: var(--body-font);
+  font-size: 14px;
+  color: #555;
+  transition: all 0.25s ease;
 }
 
 .fc a:hover {
-  color: #2f4a33
-}
-
-.fnl p {
-  font-size: 13px;
-  color: var(--black);
-  margin-bottom: 14px;
-  line-height: 1.65
+  color: var(--green);
+  padding-left: 4px;
 }
 
 .fnl h4 {
   font-family: var(--body-font);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: .02em;
-  text-transform: uppercase;
   color: #000;
-  margin-bottom: 15px
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fnl p {
+  font-family: var(--body-font);
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 .nl-row {
-  display: flex
+  display: flex;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.nl-row:focus-within {
+  border-color: var(--green);
 }
 
 .nl-row input {
   flex: 1;
-  padding: 11px 13px;
-  background: rgba(255, 255, 255, .6);
-  border: 1px solid rgba(0, 0, 0, .2);
-  border-right: 0;
-  border-radius: 2px 0 0 2px;
-  font-size: 13px;
-  color: #14120f;
-  font-family: var(--site-font);
+  padding: 14px 18px;
+  border: none;
+  background: transparent;
+  font-family: var(--body-font);
+  font-size: 14px;
   outline: none;
-  transition: border-color .25s
-}
-
-.nl-row input:focus {
-  border-color: #2f4a33
+  color: #000;
 }
 
 .nl-row button {
-  padding: 11px 15px;
-  background: var(--brown2);
-  border: none;
-  border-radius: 0 2px 2px 0;
+  padding: 0 20px;
+  background: var(--green);
   color: #fff;
+  border: none;
   cursor: pointer;
-  font-size: 14px;
-  transition: background .25s
+  font-size: 18px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nl-row button:hover {
-  background: var(--green)
+  background: #4a5428;
 }
 
 .fbot {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 28px;
-  border-top: 1px solid rgba(0, 0, 0, .12)
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .fbot-copy {
-  font-size: 12px;
-  color: rgba(20, 18, 15, .75)
+  font-family: var(--body-font);
+  font-size: 13px;
+  color: #777;
 }
 
 .fbot-tag {
   font-family: var(--body-font);
   font-size: 13px;
-  color: rgba(20, 18, 15, .65);
-}
-
-.fbot-tag a {
-  text-decoration: none;
-  font-weight: 700;
+  color: #777;
 }
 
 /* -- RESPONSIVE -- */
-@media(max-width:1080px) {
+@media (max-width: 1100px) {
   .fg2 {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 50px;
+  }
+  .fb-txt {
+    max-width: 100%;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 650px) {
   footer {
-    padding: 52px 5% 24px;
+    padding: 60px 6% 30px;
     text-align: center;
   }
-
   .fg2 {
     grid-template-columns: 1fr;
-    gap: 36px;
-    margin-bottom: 36px;
+    gap: 40px;
   }
-
+  .nl-row {
+    max-width: 400px;
+    margin: 0 auto;
+  }
   .fbot {
     flex-direction: column;
+    gap: 15px;
     text-align: center;
-    gap: 16px;
-    padding: 24px 6% 32px;
-  }
-
-  .fbot-copy {
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  .fbot-tag {
-    font-size: 12px;
   }
 }
