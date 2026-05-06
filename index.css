@@ -2267,15 +2267,16 @@ section[style*="background: var(--green)"] em {
 }
 
 .cinfo h3 {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 32px;
-  font-weight: 700;
+  font-family: var(--site-font) !important;
+  font-size: 45px;
+  font-weight: 800 !important;
   color: var(--brown2);
   margin-bottom: 12px;
   line-height: 1.2
 }
 
 .cinfo>p {
+  font-family: var(--body-font) !important;
   font-size: 15px;
   color: var(--brown2);
   opacity: 0.85;
@@ -2311,8 +2312,9 @@ section[style*="background: var(--green)"] em {
 }
 
 .cd-l {
+  font-family: var(--body-font) !important;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .13em;
   color: var(--brown2);
@@ -2320,6 +2322,7 @@ section[style*="background: var(--green)"] em {
 }
 
 .cd-v {
+  font-family: var(--body-font) !important;
   font-size: 14px;
   font-weight: 500;
   color: var(--brown2);
@@ -2415,8 +2418,9 @@ section[style*="background: var(--green)"] em {
 
 /* Social links */
 .social-title {
-  font-size: 10px;
-  font-weight: 600;
+  font-family: var(--body-font) !important;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--brown);
@@ -2512,9 +2516,9 @@ section[style*="background: var(--green)"] em {
 }
 
 .eform h3 {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 26px;
-  font-weight: 700;
+  font-family: var(--site-font) !important;
+  font-size: 28px;
+  font-weight: 800 !important;
   color: var(--green);
   margin-bottom: 25px;
   line-height: 1.2
@@ -2531,6 +2535,7 @@ section[style*="background: var(--green)"] em {
 }
 
 .fg label {
+  font-family: var(--body-font) !important;
   display: block;
   font-size: 11px;
   font-weight: 700;
@@ -2548,10 +2553,9 @@ section[style*="background: var(--green)"] em {
   padding: 13px 16px;
   background: rgba(255, 255, 255, 0.4);
   border: 1.5px solid rgba(76, 35, 24, 0.15);
-  /* Using brown2 opacity */
   border-radius: 4px;
   font-size: 15px;
-  font-family: var(--site-font);
+  font-family: var(--body-font) !important;
   color: var(--brown2);
   outline: none;
   transition: all .25s;
@@ -2591,15 +2595,15 @@ section[style*="background: var(--green)"] em {
   width: 100%;
   background: var(--brown2);
   color: #fff;
-  padding: 16px;
+  padding: 18px;
   border: none;
   border-radius: 4px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
   cursor: pointer;
-  font-family: var(--site-font);
+  font-family: var(--body-font) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -3418,7 +3422,8 @@ section[style*="background: var(--green)"] em {
 }
 
 .cm-hero-top h2 {
-  font-size: clamp(32px, 5vw, 42px);
+  font-size: clamp(40px, 4vw, 80px) !important;
+  line-height: 1.1;
   color: var(--cream);
 }
 

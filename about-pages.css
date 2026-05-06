@@ -8,7 +8,7 @@
   --white: #ffffff;
   --black: #0a0604;
   --site-font: 'Cormorant Garamond', serif;
-  --body-font: 'Outfit', sans-serif;
+  --body-font: 'Outfit', sans-serif !important;
   --accent-font: 'Spectral', serif;
   --kicker-color: #6b3828;
 }
@@ -21,6 +21,13 @@ h5,
 h6 {
   font-family: var(--site-font) !important;
   font-weight: 800 !important;
+}
+
+.section-header h2,
+.awards-head h2,
+.gallery-header h2,
+.articles-head h2 {
+  font-size: clamp(40px, 4vw, 80px) !important;
 }
 
 p {
@@ -360,8 +367,8 @@ body::before {
 
 .section-header .av-eye {
   margin-bottom: 12px;
-  font-weight: 800;
-
+  font-weight: 900;
+  font-family: cormorantgaramond, serif !important;
 }
 
 .section-header h1,
@@ -706,17 +713,20 @@ body::before {
 }
 
 .page-about .av-value-card h2 {
-  font-family: var(--site-font), serif;
-  font-size: 28px;
-  line-height: 1.08;
+  font-family: cormorantgaramond, serif !important;
+  font-size: 32px;
+  line-height: 1.1;
   color: #2a2018;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em;
 }
 
 .page-about .av-value-card p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: rgba(40, 31, 24, .9);
+  font-family: var(--body-font) !important;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(40, 31, 24, .85);
 }
 
 .page-about .av-strip {
@@ -761,7 +771,7 @@ body::before {
 
 .team-gov-head h1 {
   font-family: var(--site-font), serif;
-  font-size: clamp(30px, 4.2vw, 46px);
+  font-size: clamp(32px, 6vw, 82px)!important;
   font-weight: 800;
   letter-spacing: .02em;
   color: #19140f;
@@ -770,7 +780,7 @@ body::before {
 }
 
 .team-gov-head p {
-  font-size: clamp(14px, 1.45vw, 18px);
+  font-size: clamp(14px, 1.45vw, 18px) ;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: #4f463d;
@@ -1722,7 +1732,7 @@ body::before {
 }
 
 .awards-head {
-  text-align: left;
+  text-align: center;
   max-width: 1200px;
   margin: 0 auto 80px;
   padding: 0 5%;
@@ -1739,7 +1749,7 @@ body::before {
 }
 
 .awards-head h2 {
-  font-size: clamp(40px, 6vw, 82px);
+  font-size: clamp(40px, 4vw, 80px) !important;
   line-height: 1;
   letter-spacing: -0.02em;
   font-family: var(--site-font) !important;
