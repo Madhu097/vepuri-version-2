@@ -16,13 +16,15 @@
 h1,
 h2,
 h3,
-h4 {
-  font-family: var(--site-font);
-  font-weight: 500;
+h4,
+h5,
+h6 {
+  font-family: var(--site-font) !important;
+  font-weight: 800 !important;
 }
 
 p {
-  font-family: var(--body-font);
+  font-family: var(--body-font) !important ;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 300;
@@ -70,7 +72,7 @@ h3 em,
 
 .a-eye,
 .av-eye {
-  font-family: var(--accent-font) !important;
+  font-family: var(--body-font) !important;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;

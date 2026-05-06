@@ -18,13 +18,35 @@
   max-width: 100%;
   overflow-wrap: break-word;
 }
-/* Global Reset & Base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--site-font) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
 .farm-page {
   background-color: var(--cream);
   color: var(--text-dark);
-  font-family: var(--body-font);
+  font-family: var(--body-font) !important;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em {
+  font-family: var(--accent-font) !important;
+  font-style: italic;
+  font-weight: 700 !important;
+  text-transform: none !important;
 }
 
 /* Scroll Reveal Base */
@@ -233,7 +255,7 @@
   filter: invert(1);
 }
 
-/* --- SAPLING VARIETIES --- */
+/* --- SAMPLING VARIETIES --- */
 .sapling-section {
   padding: 2px 8% 30px;
   background: var(--primary-green);
@@ -242,6 +264,8 @@
 
 .sapling-section .section-header h2 {
   color: var(--cream) !important;
+  text-align: center !important;
+  margin-bottom: 50px;
 }
 
 .sapling-section .section-divider .line {
@@ -523,15 +547,14 @@ padding: 20px 20px;
   padding: 100px 8%;
   background: var(--primary-green);
   color: var(--white);
+  
 }
 
 .cert-section h2 {
   color: var(--cream) !important;
 }
 
-.cert-section .header-line {
-  background: rgba(255, 255, 255, 0.2);
-}
+
 
 .cert-section .cert-type,
 .cert-section .cert-info h4,
@@ -549,14 +572,11 @@ padding: 20px 20px;
   justify-content: center;
   gap: 30px;
   margin-bottom: 60px;
+  margin-top: -60px;
+
 }
 
-.cert-header-wrap .header-line {
-  height: 1px;
-  background: #c0c2b2;
-  flex: 1;
-  max-width: 300px;
-}
+
 
 .cert-header-wrap h2 {
   font-family: var(--site-font);
@@ -573,7 +593,7 @@ padding: 20px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 30px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -763,7 +783,7 @@ padding: 20px 20px;
   font-size: clamp(32px, 4vw, 48px);
   color: var(--cream);
   font-weight: 500;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
 .process-grid {
@@ -782,7 +802,7 @@ padding: 20px 20px;
   left: 10%;
   right: 10%;
   height: 2px;
-  background: rgba(96, 108, 56, 0.2);
+  background: var(--cream);
   z-index: 1;
 }
 

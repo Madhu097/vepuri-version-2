@@ -7,22 +7,25 @@
 h1 {
   font-family: var(--site-font) !important;
   font-size: clamp(36px, 10vw, 124px);
-  font-weight: 800;
+  font-weight: 800 !important;
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.02em !important;
 }
 
 h2 {
   font-family: var(--site-font) !important;
   font-size: clamp(28px, 5vw, 60px);
-  font-weight: 700;
+  font-weight: 800 !important;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.02em !important;
 }
 
 h1 em,
 h2 em,
 h3 em,
+h4 em,
+h5 em,
+h6 em,
 .section-header h1 em,
 .section-header h2 em {
   font-family: var(--accent-font) !important;
@@ -30,7 +33,7 @@ h3 em,
   font-style: italic;
   display: inline;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 700 !important;
   font-size: 0.72em;
 }
 
