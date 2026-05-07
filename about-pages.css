@@ -1754,9 +1754,9 @@ body::before {
   letter-spacing: -0.02em;
   font-family: var(--site-font) !important;
   text-transform: none;
-  color: #fff;
+  color: var(--cream) !important;
   opacity: 1;
-  font-weight: 500;
+  font-weight: 800 !important;
 }
 
 .awards-grid {
@@ -2132,29 +2132,30 @@ body::before {
 
 .gallery-header .g-tag {
   display: inline-block;
-  background: rgba(186, 217, 95, 0.15);
+  background: rgba(255, 233, 196, 0.1);
   padding: 8px 20px;
   border-radius: 40px;
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: #bad95f;
+  color: var(--cream) !important;
   margin-bottom: 24px;
-  border: 1px solid rgba(186, 217, 95, 0.2);
+  border: 1px solid rgba(255, 233, 196, 0.2);
 }
 
 .gallery-header h2 {
   font-family: var(--site-font), serif;
   font-size: clamp(38px, 6vw, 68px);
   line-height: .95;
-  color: #ffffff;
+  color: var(--cream) !important;
   margin-bottom: 24px;
+  font-weight: 800 !important;
 }
 
 .gallery-header h2 em {
   font-style: italic;
-  color: var(--cream); /* Visible on green backdrop */
+  color: var(--cream) !important;/* Visible on green backdrop */
 }
 
 .gallery-header p {
