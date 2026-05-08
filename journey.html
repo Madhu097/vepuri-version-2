@@ -21,6 +21,8 @@
       --white: #ffffff;
       --site-font: 'Cormorant Garamond', serif;
       --body-font: 'Outfit', sans-serif;
+      --accent-font: 'Spectral', serif;
+      --kicker-color: #6b3828;
     }
 
     h1,
@@ -37,10 +39,9 @@
       font-family: var(--accent-font) !important;
       color: var(--kicker-color) !important;
       font-style: italic;
-      display: block;
+      display: inline;
       text-transform: none;
-      font-size: 0.72em;
-      margin-top: 6px;
+      font-size: 1em;
       font-weight: 500;
     }
 
@@ -94,11 +95,12 @@
 
     .journey-head h1 {
       font-family: var(--site-font);
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 0.92;
-      text-transform: uppercase;
+      font-size: clamp(32px, 4.8vw, 56px);
+      line-height: 0.98;
+      text-transform: none;
       letter-spacing: -0.01em;
       font-weight: 800;
+      color: #21170f;
     }
 
     .journey-head p {
@@ -238,7 +240,7 @@
       flex: 0 0 200px;
       width: 200px;
       height: 200px;
-      border-radius: 50%;
+      border-radius: 50% !important;
       overflow: visible;
     }
 
@@ -246,7 +248,7 @@
       position: absolute;
       width: 120px;
       height: 120px;
-      border-radius: 50%;
+      border-radius: 50% !important;
       background: var(--teal);
       top: -20px;
       z-index: 0;
@@ -269,7 +271,7 @@
       z-index: 1;
       width: 100%;
       height: 100%;
-      border-radius: 50%;
+      border-radius: 50% !important;
       object-fit: cover;
       filter: saturate(1.2) contrast(1.06) brightness(1.04);
       border: 3px solid #fff;
@@ -561,8 +563,8 @@
   <main class="journey">
     <header class="journey-head">
       <div class="journey-kicker">Vepuri Growth Path</div>
-      <h1>Journey Timeline</h1>
-      <p>
+      <h1><em>Journey Timeline</em></h1>
+      <p> 
         From a single idea to building a structured coconut ecosystem, Vepuri's journey is driven by one clear focus
         creating real value for farmers through processing and innovation. What started as a vision has grown into a
         scalable model connecting farms, factories, and markets.
@@ -575,8 +577,8 @@
       <article class="event left tone-teal">
         <div class="event-content">
           <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/brands/brand1.jpg" alt="Coasta Naturals Launch" loading="lazy" decoding="async">
+            <span class="accent circle"></span>
+            <img class="circle" src="assets/brands/brand1.jpg" alt="Coasta Naturals Launch" loading="lazy" decoding="async">
           </div>
           <div class="event-copy">
             <div class="event-year">2018</div>
@@ -592,8 +594,8 @@
       <article class="event right tone-red">
         <div class="event-content">
           <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/factory.jpeg" alt="Manufacturing Initiation" loading="lazy" decoding="async">
+            <span class="accent circle"></span>
+            <img class="circle" src="assets/journey/factory.jpeg" alt="Manufacturing Initiation" loading="lazy" decoding="async">
           </div>
           <div class="event-copy">
             <div class="event-year">2019</div>
@@ -609,8 +611,8 @@
       <article class="event left tone-teal">
         <div class="event-content">
           <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/2020.jpg" alt="Product Innovation Breakthrough" loading="lazy" decoding="async">
+            <span class="accent circle"></span>
+            <img class="circle" src="assets/journey/2020.jpg" alt="Product Innovation Breakthrough" loading="lazy" decoding="async">
           </div>
           <div class="event-copy">
             <div class="event-year">2020</div>
@@ -626,8 +628,8 @@
       <article class="event right tone-red">
         <div class="event-content">
           <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/Unit 2.jpg" alt="Capacity Expansion" loading="lazy" decoding="async">
+            <span class="accent circle"></span>
+            <img class="circle" src="assets/journey/Unit 2.jpg" alt="Capacity Expansion" loading="lazy" decoding="async">
           </div>
           <div class="event-copy">
             <div class="event-year">2023</div>
@@ -643,8 +645,8 @@
       <article class="event left tone-teal">
         <div class="event-content">
           <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/Vijayawada cafe .jpg" alt="CocoMunzzz Café Launch" loading="lazy" decoding="async">
+            <span class="accent circle"></span>
+            <img class="circle" src="assets/journey/Vijayawada cafe .jpg" alt="CocoMunzzz Café Launch" loading="lazy" decoding="async">
           </div>
           <div class="event-copy">
             <div class="event-year">2025</div>
@@ -660,8 +662,8 @@
       <article class="event right tone-red">
         <div class="event-content">
           <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/cafe.jpeg" alt="Café Expansion" loading="lazy" decoding="async">
+            <span class="accent circle"></span>
+            <img class="circle" src="assets/journey/cafe.jpeg" alt="Café Expansion" loading="lazy" decoding="async">
           </div>
           <div class="event-copy">
             <div class="event-year">2026</div>
@@ -677,8 +679,8 @@
       <article class="event left tone-teal">
         <div class="event-content">
           <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/Unit 2.png" alt="Advanced Processing Facility" loading="lazy" decoding="async">
+            <span class="accent circle"></span>
+            <img class="circle" src="assets/journey/Unit 2.png" alt="Advanced Processing Facility" loading="lazy" decoding="async">
           </div>
           <div class="event-copy">
             <div class="event-year">2026</div>
@@ -694,8 +696,8 @@
       <article class="event right tone-red">
         <div class="event-content">
           <div class="event-media">
-            <span class="accent"></span>
-            <img src="assets/journey/Vijayawada cafe .png" alt="Scaling Coconut Café Network" loading="lazy" decoding="async">
+            <span class="accent circle"></span>
+            <img class="circle" src="assets/journey/2026 scaling cocomunzzz.png" alt="Scaling Coconut Café Network" loading="lazy" decoding="async">
           </div>
           <div class="event-copy">
             <div class="event-year">2026</div>

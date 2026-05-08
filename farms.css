@@ -11,6 +11,7 @@
   --body-font: 'Outfit', sans-serif;
   --accent-font: 'Spectral', serif;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +19,7 @@
   max-width: 100%;
   overflow-wrap: break-word;
 }
+
 h1,
 h2,
 h3,
@@ -61,6 +63,7 @@ h6 em {
   transform: translateY(30px);
   transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
 .rv.on {
   opacity: 1;
   transform: translateY(0);
@@ -68,9 +71,17 @@ h6 em {
 
 /* Floating Animation */
 @keyframes float {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(5deg); }
-  100% { transform: translateY(0) rotate(0deg); }
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 .floating-leaf {
@@ -111,7 +122,8 @@ h6 em {
   position: absolute;
   top: 0;
   left: 0;
-  width: 60%; /* Fade covers the left side */
+  width: 60%;
+  /* Fade covers the left side */
   height: 100%;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
   z-index: 2;
@@ -168,7 +180,7 @@ h6 em {
 .farm-hero-btn:hover {
   background: #3a1a12;
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* --- INTRO SECTION --- */
@@ -222,7 +234,8 @@ h6 em {
 }
 
 .farm-intro p {
-  font-family: var(--body-font); /* Matches the clean sans-serif in image */
+  font-family: var(--body-font);
+  /* Matches the clean sans-serif in image */
   font-size: clamp(18px, 2.2vw, 26px);
   line-height: 1.6;
   color: #333;
@@ -240,7 +253,7 @@ h6 em {
 
 .section-divider .line {
   height: 1px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   flex: 1;
   max-width: 300px;
 }
@@ -279,7 +292,8 @@ h6 em {
 }
 
 .sapling-section .sapling-card {
-  color: var(--text-dark); /* Keep card content dark as it's on white background */
+  color: var(--text-dark);
+  /* Keep card content dark as it's on white background */
 }
 
 .sapling-section .section-divider {
@@ -306,7 +320,8 @@ h6 em {
 }
 
 .sapling-section .divider-icon img {
-  filter: none; /* Keep original icon color on white background */
+  filter: none;
+  /* Keep original icon color on white background */
 }
 
 .sapling-grid {
@@ -322,21 +337,22 @@ h6 em {
   background: var(--white);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
   transition: all 0.4s ease;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   height: auto;
   min-height: 320px;
 }
 
 .sapling-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   border-color: var(--primary-green);
 }
 
 .s-card-media {
-  flex: 0 0 240px; /* Consistent with team member media */
+  flex: 0 0 240px;
+  /* Consistent with team member media */
   background: #f9f9f9;
   overflow: hidden;
 }
@@ -414,16 +430,19 @@ h6 em {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-  min-height: 180px; /* Sleeker, less tall as per image */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  min-height: 180px;
+  /* Sleeker, less tall as per image */
 }
 
 .capacity-content {
   flex: 1;
-  padding: 30px 50px; /* Reduced padding for tighter look */
+  padding: 30px 50px;
+  /* Reduced padding for tighter look */
   display: flex;
   align-items: center;
-  gap: 40px; /* Reduced gap as per image */
+  gap: 40px;
+  /* Reduced gap as per image */
 }
 
 .cap-stats {
@@ -446,7 +465,8 @@ h6 em {
 
 .cap-numbers h2 {
   font-family: serif !important;
-  font-size: 58px; /* Precise size */
+  font-size: 58px;
+  /* Precise size */
   color: #4a5d23;
   font-weight: 700;
   margin: 0;
@@ -466,19 +486,20 @@ h6 em {
 }
 
 .cap-divider {
-  width: 0.5px; /* Thinner as per reference */
+  width: 0.5px;
+  /* Thinner as per reference */
   background: #c0c2b2;
   height: 100px;
   flex-shrink: 0;
 }
 
 .cap-text {
-display: flex;
-align-items: center;
-justify-content: stretch;
-width: 300px;
-height: 250px;
-padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  width: 300px;
+  height: 250px;
+  padding: 20px 20px;
 
 }
 
@@ -488,11 +509,13 @@ padding: 20px 20px;
   line-height: 1.5;
   color: #333;
   margin: 0;
-  max-width: 420px; /* Controls text flow to match image */
+  max-width: 420px;
+  /* Controls text flow to match image */
 }
 
 .capacity-media {
-  flex: 0 0 40%; /* Increased width for more visual impact */
+  flex: 0 0 40%;
+  /* Increased width for more visual impact */
   overflow: hidden;
   height: 100%;
 }
@@ -513,9 +536,11 @@ padding: 20px 20px;
 
 @media (max-width: 1200px) {
   .capacity-container {
-    flex-direction: column-reverse; /* Image on top or bottom? Let's put image on bottom or top? User's original had it on right. Let's put it on top. */
+    flex-direction: column-reverse;
+    /* Image on top or bottom? Let's put image on bottom or top? User's original had it on right. Let's put it on top. */
     min-height: auto;
   }
+
   .capacity-content {
     flex-direction: column;
     align-items: center;
@@ -524,25 +549,31 @@ padding: 20px 20px;
     gap: 30px;
     width: 100%;
   }
+
   .cap-stats {
     flex-direction: column;
     gap: 20px;
   }
+
   .cap-divider {
     display: none;
   }
+
   .cap-text {
     width: 100%;
     height: auto;
     padding: 0;
   }
+
   .cap-text p {
     max-width: none;
   }
+
   .capacity-media {
     flex: 0 0 300px;
     width: 100%;
   }
+
   .capacity-media img {
     border-radius: 0;
   }
@@ -553,7 +584,7 @@ padding: 20px 20px;
   padding: 100px 8%;
   background: var(--primary-green);
   color: var(--white);
-  
+
 }
 
 .cert-section h2 {
@@ -621,7 +652,7 @@ padding: 20px 20px;
   background: var(--white);
   border-radius: 50%;
   padding: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .cert-logo img {
@@ -672,24 +703,29 @@ padding: 20px 20px;
   .cert-header-wrap .header-line {
     display: none;
   }
+
   .cert-main-container {
     flex-direction: column;
     gap: 50px;
     text-align: center;
   }
+
   .cert-item {
     flex-direction: column;
     text-align: center;
     gap: 20px;
   }
+
   .cert-logo {
     width: 100px;
     height: 100px;
     margin: 0 auto;
   }
+
   .cert-vertical-divider {
     display: none;
   }
+
   .cert-header-wrap h2 {
     white-space: normal;
     text-align: center;
@@ -703,15 +739,15 @@ padding: 20px 20px;
 }
 
 .buyback-container {
-  max-width: 1200px;
+  max-width: 1100px;
   height: auto;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.35fr 0.65fr;
+  grid-template-columns: 0.28fr 0.72fr;
   background: var(--white);
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.04);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
 }
 
 .bb-media img {
@@ -774,7 +810,7 @@ padding: 20px 20px;
 
 .bbf-icon img {
   width: 25px;
-  
+
 }
 
 .bbf-item span {
@@ -797,13 +833,22 @@ padding: 20px 20px;
 }
 
 .process-section h4 {
-  font-family: var(--site-font);
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 700;
-  color:white !important;
+  font-family: var(--site-font) !important;
+  font-size: clamp(24px, 3.5vw, 24px) !important;
+  font-weight: 800 !important;
+  color: white !important;
   text-transform: none;
-  letter-spacing: normal;
+  letter-spacing: -0.01em;
   margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.proc-num {
+  font-family: var(--body-font) !important;
+  font-weight: 700;
+  margin-right: 8px;
+  font-size: 0.8em;
+  opacity: 0.9;
 }
 
 .process-grid {
@@ -841,9 +886,9 @@ padding: 20px 20px;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: var(--primary-green);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .proc-icon img,
@@ -874,14 +919,17 @@ padding: 20px 20px;
     grid-template-columns: 1fr;
     max-width: 700px;
   }
+
   .capacity-container,
   .buyback-container {
     grid-template-columns: 1fr;
   }
+
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
   }
+
   .process-grid::before {
     display: none;
   }

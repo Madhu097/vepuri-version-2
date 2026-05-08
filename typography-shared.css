@@ -83,3 +83,26 @@ footer a,
 .fbot-tag {
   font-family: var(--body-font);
 }
+
+/* Global Border Radius - Images & Cards */
+img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot),
+[class*="card"],
+.pc-modern,
+.bh-card,
+.dept-card,
+.bg-paper,
+.bg-glass {
+  border-radius: 10px !important;
+}
+
+/* Preserve Circular Images */
+.mi-dot, 
+.a-badge, 
+.cb-n, 
+.cb, 
+.circle, 
+.dot,
+.event-media img,
+.team-member-media img {
+  border-radius: 50% !important;
+}
