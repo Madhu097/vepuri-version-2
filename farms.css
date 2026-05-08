@@ -335,7 +335,7 @@ h6 em {
 .sapling-card {
   display: flex;
   background: var(--white);
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
   transition: all 0.4s ease;
@@ -351,7 +351,7 @@ h6 em {
 }
 
 .s-card-media {
-  flex: 0 0 240px;
+  flex: 0 0 180px;
   /* Consistent with team member media */
   background: #f9f9f9;
   overflow: hidden;
@@ -425,7 +425,7 @@ h6 em {
   max-width: 1400px;
   margin: 0 auto;
   background: white;
-  border-radius: 30px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -524,8 +524,8 @@ h6 em {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   display: block;
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -745,7 +745,7 @@ h6 em {
   display: grid;
   grid-template-columns: 0.28fr 0.72fr;
   background: var(--white);
-  border-radius: 30px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
 }

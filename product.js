@@ -180,13 +180,7 @@ function getProductImage(key, fallbackSrc, fallbackAlt) {
 }
 
 function formatHeadingText(text) {
-  if (!text) return '';
-  const parts = text.split(' ');
-  if (parts.length <= 1) return text.toUpperCase();
-  const splitIdx = Math.max(1, Math.floor(parts.length / 2));
-  const caps = parts.slice(0, splitIdx).join(' ').toUpperCase();
-  const italics = parts.slice(splitIdx).join(' ');
-  return `${caps} <em>${italics}</em>`;
+  return text || '';
 }
 
 function renderProduct() {

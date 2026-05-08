@@ -49,10 +49,28 @@ textarea {
   box-shadow: 0 4px 24px rgba(0, 0, 0, .14);
 }
 
+#nav .nav-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#nav .nav-logo a {
+  display: flex;
+  align-items: center;
+}
+
 #nav .nav-logo img {
   height: 50px;
   width: auto;
   display: block;
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  #nav .nav-logo img {
+    height: 42px;
+  }
 }
 
 #nav .nav-links {

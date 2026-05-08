@@ -177,6 +177,9 @@ footer {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .f-logo {
+    margin: 0 auto 25px;
+  }
   .nl-row {
     max-width: 400px;
     margin: 0 auto;
