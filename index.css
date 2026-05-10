@@ -1427,7 +1427,7 @@ body.hero-ready .hero-metrics {
   position: relative;
   display: block;
   text-decoration: none;
-  height: 380px;
+  height: 420px;
   border-radius: 16px;
   border: 1.5px solid var(--cream);
   overflow: hidden;
@@ -1445,7 +1445,8 @@ body.hero-ready .hero-metrics {
   padding: 30px;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  min-height: 400px;
+  height: 420px;
+  min-height: unset;
 }
 
 .pc-more-content {
@@ -1495,11 +1496,12 @@ body.hero-ready .hero-metrics {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform 1.5s ease;
 }
 
 .pc-modern:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .pc-overlay {

@@ -545,6 +545,7 @@ body::before {
 .page-about .av-copy h1 {
   font-family: var(--site-font), serif;
   font-size: clamp(26px, 4.4vw, 56px);
+  font-weight: 700 !important;
   line-height: .95;
   letter-spacing: -.01em;
   color: var(--cream);
