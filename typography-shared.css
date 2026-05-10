@@ -105,7 +105,6 @@ img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot):not(.a
   .hero-title, .h2, .h2-ch, .farm-title,
   .section-header h1, .section-header h2,
   .a-hero h1, .av-copy h1, .team-gov-head h1,
-  .pc-title, .nc h3, .bh-card h3,
   .b-hero h1, .farm-hero h1, .op-head h2, .b-item-copy h2, 
   .p-showcase h1, .journey-head h1 {
     font-size: 40px !important;
