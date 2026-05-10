@@ -2319,12 +2319,13 @@ body::before {
 }
 /* -- EXTRA SMALL DEVICES & FINAL POLISH -- */
 @media (max-width: 400px) {
-  .a-hero h1 {
-    font-size: 26px !important;
-  }
-  .av-copy h1 {
-    font-size: 24px !important;
-  }
+  h1 { font-size: 32px !important; }
+  h2 { font-size: 26px !important; }
+  h3 { font-size: 22px !important; }
+  h4 { font-size: 18px !important; }
+  h5 { font-size: 16px !important; }
+  h6 { font-size: 14px !important; }
+
   .av-btn {
     width: 100%;
     text-align: center;
@@ -2334,8 +2335,5 @@ body::before {
   }
   .team-gov {
     padding: 20px !important;
-  }
-  .h2 {
-    font-size: 24px !important;
   }
 }

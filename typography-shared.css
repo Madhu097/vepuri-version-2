@@ -99,3 +99,24 @@ img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot):not(.a
 .award-img {
   border-radius: 50% !important;
 }
+
+/* RESPONSIVE: Standardize heading sizes for mobile */
+@media (max-width: 768px) {
+  h1, h2, h3,
+  .hero-title, .h2, .h2-ch, .farm-title,
+  .section-header h1, .section-header h2,
+  .a-hero h1, .av-copy h1, .team-gov-head h1,
+  .pc-title, .nc h3, .bh-card h3,
+  .b-hero h1, .farm-hero h1, .op-head h2, .b-item-copy h2, 
+  .p-showcase h1, .journey-head h1 {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.01em !important;
+  }
+  
+  h1 em, h2 em, h3 em,
+  .section-header h1 em, .section-header h2 em,
+  .a-hero h1 em, .av-copy h1 em {
+    font-size: 0.8em !important;
+  }
+}

@@ -1667,6 +1667,7 @@ body.hero-ready .hero-metrics {
 
 #network .h2-ch {
   color: #6b3828 !important;
+  font-size: 55px;
 }
 
 #network::before {
@@ -2294,7 +2295,7 @@ body.hero-ready .hero-metrics {
 
 .cinfo h3 {
   font-family: var(--site-font) !important;
-  font-size: clamp(30px, 4vw, 45px) !important;
+  font-size: clamp(30px, 4vw, 45px);
   font-weight: 800 !important;
   color: var(--brown2);
   margin-bottom: 15px;
@@ -2543,7 +2544,7 @@ body.hero-ready .hero-metrics {
 
 .eform h3 {
   font-family: var(--site-font) !important;
-  font-size: clamp(28px, 4vw, 36px) !important;
+  font-size: clamp(28px, 4vw, 36px);
   font-weight: 800 !important;
   color: var(--green);
   margin-bottom: 25px;
@@ -3153,6 +3154,13 @@ body.hero-ready .hero-metrics {
 }
 
 @media(max-width:560px) {
+  h1 { font-size: 32px !important; }
+  h2 { font-size: 26px !important; }
+  h3 { font-size: 22px !important; }
+  h4 { font-size: 18px !important; }
+  h5 { font-size: 16px !important; }
+  h6 { font-size: 14px !important; }
+
   #hero {
     min-height: 100vh;
     padding: 104px 6% 72px
@@ -3420,7 +3428,7 @@ body.hero-ready .hero-metrics {
 }
 
 .cm-hero-top h2 {
-  font-size: clamp(40px, 4vw, 80px) !important;
+  font-size: clamp(40px, 4vw, 80px);
   line-height: 1.1;
   color: var(--cream);
 }
@@ -4069,7 +4077,7 @@ body.hero-ready .hero-metrics {
   }
 
   .cm-partners h2 {
-    font-size: 30px;
+    /* Standardized in typography-shared.css */
   }
 
   .office-maps {
@@ -4102,6 +4110,6 @@ body.hero-ready .hero-metrics {
     padding: 20px !important;
   }
   .h2, .h2-ch {
-    font-size: 26px !important;
+    /* Standardized in typography-shared.css */
   }
 }
