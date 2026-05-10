@@ -168,7 +168,7 @@ h6 em {
   align-items: center;
   gap: 12px;
   padding: 18px 40px;
-  background: var(--brown-accent);
+  background: var(--primary-green);
   color: var(--white);
   text-decoration: none;
   font-weight: 700;
@@ -179,7 +179,7 @@ h6 em {
 }
 
 .farm-hero-btn:hover {
-  background: #3a1a12;
+  background: #4a5428;
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }

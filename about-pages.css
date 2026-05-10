@@ -2241,7 +2241,9 @@ body::before {
   grid-column: span 1;
   grid-row: span 2;
 }
-
+.fc-5 img {
+  object-position: bottom;
+}
 .fc-6 {
   grid-column: span 1;
   grid-row: span 1;
@@ -2250,6 +2252,10 @@ body::before {
 .fc-8 {
   grid-column: span 2;
   grid-row: span 1;
+}
+
+.fc-8 img {
+  object-position: top;
 }
 
 .fc-9 {

@@ -48,6 +48,53 @@
       opacity: 0.1 !important;
       top: 65px !important;
     }
+
+    /* Partner Section Responsive */
+    .partner-heading em {
+      display: inline-block;
+      font-size: clamp(34px, 5vw, 55px);
+      font-style: italic;
+    }
+    .partner-logo {
+      height: 70px;
+      vertical-align: middle;
+      margin-top: -32px;
+      margin-left: -50px;
+      transition: all 0.3s ease;
+    }
+    .partner-logo.logo-v2 {
+      margin-left: -10px;
+      margin-top: -40px;
+      height: 65px;
+    }
+
+    .b2b-main-heading em {
+      font-size: clamp(34px, 6vw, 65px) !important;
+      display: block;
+      line-height: 1.1;
+    }
+
+    @media (max-width: 768px) {
+      .partner-logo {
+        height: 45px !important;
+        margin-top: 10px !important;
+        margin-left: 0 !important;
+        display: block !important;
+        margin: 10px auto 0 !important;
+      }
+      .partner-heading {
+        text-align: center !important;
+      }
+      .partner-heading em {
+        display: block !important;
+        font-size: 32px !important;
+        margin-bottom: 5px !important;
+      }
+      .cm-partner-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+      }
+    }
   </style>
 </head>
 
@@ -84,7 +131,7 @@
       <div class="cm-hero rv">
         <div class="cm-hero-top">
           <span class="eye" style="color: var(--white);">B2B Expertise</span>
-          <h2 style="font-size: clamp(40px, 4vw, 80px);"><em style="color: var(--cream)!important;">Contract Manufacturing & Partnerships</em></h2>
+          <h2 class="b2b-main-heading"><em style="color: var(--cream)!important;">Contract Manufacturing & Partnerships</em></h2>
           <div class="sline" style="margin: 0 auto 60px; background: var(--cream);"></div>
         </div>
         <div class="cm-hero-grid">
@@ -102,7 +149,7 @@
       <!-- 3. Process Flow -->
       <div class="cm-process rv d2">
         <div class="section-header">
-          <h2 class="h2" style="text-align: center; color: var(--green); margin-bottom: 30px; font-size: clamp(40px, 4vw, 80px);"><em>Why Partner With</em> <img src="assets/b2b/vepuri brown.png" alt="Vepuri" style="height: 50px; vertical-align: middle; margin-top: -20px; margin-left: -30px; align-items: center;"></h2>
+          <h2 class="h2 partner-heading"><em>Why Partner With</em> <img src="assets/b2b/vepuri brown.png" alt="Vepuri" class="partner-logo"></h2>
           <p class="cm-sub-title" style="color: var(--brown); font-size: 18px; margin-bottom: 50px; font-weight: 500; text-align: center;">
             Our structured value chain ensures consistency and efficiency at every stage.
           </p>
@@ -159,7 +206,7 @@
 
       <!-- 5.who can Partner with Vepuri -->
       <div class="cm-partners rv d2">
-        <h2 class="h2" style="text-align: center; color: var(--cream); margin-bottom: 30px; text-transform: capitalize;font-size: clamp(40px, 4vw, 80px);"><em style="color: var(--cream)!important;">Who Can Partner With</em> <img src="assets/b2b/vepuri-removebg-preview.png" alt="Vepuri" style="height: 50px; vertical-align: middle; margin-top: -18px; margin-left: -8px;!important"></h2>
+        <h2 class="h2 partner-heading"><em style="color: var(--cream)!important;">Who Can Partner With</em> <img src="assets/b2b/vepuri-removebg-preview.png" alt="Vepuri" class="partner-logo logo-v2"></h2>
         <div class="cm-partner-grid">
           <div class="p-card">
             <h3>Emerging Brands</h3>

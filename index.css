@@ -1429,6 +1429,7 @@ body.hero-ready .hero-metrics {
   text-decoration: none;
   height: 380px;
   border-radius: 16px;
+  border: 1.5px solid var(--cream);
   overflow: hidden;
   transition: transform .5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .5s ease;
   user-select: none;
@@ -1572,7 +1573,7 @@ body.hero-ready .hero-metrics {
   margin-bottom: 5px;
   line-height: 1.1;
   color: var(--cream);
-  text-transform: capitalize;
+  text-transform: uppercase;
   transition: margin-bottom .4s ease;
   white-space: nowrap !important;
   overflow: hidden;

@@ -120,12 +120,12 @@ body {
 .p-showcase {
   display: grid;
   grid-template-columns: 1.02fr .98fr;
-  gap: 18px;
-  max-width: 1120px;
+  gap: 20px;
+  max-width: 1500px;
   margin: 0 auto;
   background: linear-gradient(145deg, rgba(255, 255, 255, .98), rgba(241, 247, 228, .95));
-  border: 1px solid rgba(96, 108, 56, .22);
-  border-radius: 14px;
+  border: 1px solid var(--cream);
+  border-radius: 10px;
   box-shadow: 0 22px 44px rgba(20, 10, 4, .24);
   overflow: hidden;
   padding: 14px
@@ -174,7 +174,7 @@ body {
   white-space: nowrap !important;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -190,8 +190,7 @@ body {
   text-transform: inherit !important;
   font-weight: inherit !important;
 }
-  color: var(--cream);
-}
+
 
 .p-showcase #productDescription,
 .p-showcase #detailDescription {
@@ -211,7 +210,7 @@ body {
   min-height: 360px;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgba(96, 108, 56, .32);
+  border: 2px solid var(--cream) !important;
   background: #10100f
 }
 
@@ -408,6 +407,7 @@ body {
   text-decoration: none;
   height: 380px;
   border-radius: 4px;
+  border: 1px solid var(--cream);
   overflow: hidden;
   transition: transform .5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .5s ease;
   user-select: none;
@@ -484,7 +484,7 @@ body {
   margin-bottom: 5px;
   line-height: 1.1;
   color: var(--cream);
-  text-transform: capitalize;
+  text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
