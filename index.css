@@ -3856,7 +3856,7 @@ body.hero-ready .hero-metrics {
   .net-inner {
     grid-template-columns: 1fr;
     gap: 40px;
-    text-align: center;
+    text-align: left;
   }
 
   .net-cards {
