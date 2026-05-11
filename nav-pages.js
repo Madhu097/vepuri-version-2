@@ -31,12 +31,32 @@
     });
   });
 
-  document.querySelectorAll('.nav-links a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      if (isMobileNav() && a.parentElement && a.parentElement.classList.contains('has-submenu')) return;
-      navLinks.classList.remove('open');
-      hbg.classList.remove('active');
-    });
+  // Improved Nav & Anchor Scroll
+  document.addEventListener('click', function (e) {
+    const target = e.target.closest('a');
+    if (!target) return;
+
+    const href = target.getAttribute('href');
+    
+    // Close menu if clicking any link on mobile (except submenus)
+    if (isMobileNav() && !target.closest('.has-submenu')) {
+      if (navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        hbg.classList.remove('active');
+      }
+    }
+
+    // Smooth scroll for internal anchors on the SAME page
+    if (href && href.startsWith('#') && href.length > 1) {
+      const el = document.querySelector(href);
+      if (el) {
+        e.preventDefault();
+        const offset = 80;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    }
   });
 
   // Scroll Reveal Observer

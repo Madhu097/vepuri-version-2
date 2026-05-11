@@ -449,7 +449,7 @@ nav.scrolled {
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   max-width: 880px;
   margin: 0 auto;
   display: flex;
@@ -627,7 +627,7 @@ nav.scrolled {
   position: absolute;
   right: 6%;
   bottom: 10%;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   gap: 32px;
   color: #ffe9c4;
@@ -1432,7 +1432,7 @@ body.hero-ready .hero-metrics {
   display: block;
   text-decoration: none;
   height: 420px;
-  border-radius: 16px;
+  border-radius: 15px;
   border: 1.5px solid var(--cream);
   overflow: hidden;
   transition: transform .5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .5s ease;
@@ -1618,7 +1618,12 @@ body.hero-ready .hero-metrics {
   padding-bottom: 40px;
 }
 
+#contact, #enquiryForm {
+  scroll-margin-top: 100px;
+}
 
+.hero-inner { z-index: 10; }
+.hero-metrics { z-index: 5; }
 
 .pc-enquire .arr {
   font-size: 16px;
@@ -1848,7 +1853,7 @@ body.hero-ready .hero-metrics {
 .bh-card {
   background: rgba(255, 255, 255, .05);
   border: 1px solid rgba(255, 255, 255, .1);
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
   transition: all .4s cubic-bezier(0.2, 0.8, 0.2, 1);

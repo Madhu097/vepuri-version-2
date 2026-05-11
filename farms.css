@@ -388,7 +388,7 @@ h6 em {
 .sapling-card {
   display: flex;
   background: var(--white);
-  border-radius: 0;
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
   transition: all 0.4s ease;

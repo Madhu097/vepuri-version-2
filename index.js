@@ -203,11 +203,35 @@ document.querySelectorAll('.has-submenu > a').forEach(a => {
   });
 });
 
-document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
-  if (isMobileNav() && a.parentElement && a.parentElement.classList.contains('has-submenu')) return;
-  document.getElementById('navLinks').classList.remove('open');
-  document.getElementById('hbg').classList.remove('active');
-}));
+// Improved Nav & Anchor Scroll
+document.addEventListener('click', e => {
+  const target = e.target.closest('a');
+  if (!target) return;
+
+  const href = target.getAttribute('href');
+  
+  // Close menu if clicking any link on mobile (except submenus)
+  if (isMobileNav() && !target.closest('.has-submenu')) {
+    const navLinks = document.getElementById('navLinks');
+    const hbg = document.getElementById('hbg');
+    if (navLinks && navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      if (hbg) hbg.classList.remove('active');
+    }
+  }
+
+  // Smooth scroll for internal anchors
+  if (href && href.startsWith('#') && href.length > 1) {
+    const el = document.querySelector(href);
+    if (el) {
+      e.preventDefault();
+      const offset = 80;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  }
+});
 
 function applyProductImagesFromConfig() {
   const imageMap = window.PRODUCT_IMAGE_MAP || {};

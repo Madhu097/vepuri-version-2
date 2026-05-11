@@ -83,8 +83,9 @@ img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot):not(.a
 .pc-modern,
 .dept-card,
 .bg-paper,
-.bg-glass {
-  border-radius: 0 !important;
+.bg-glass,
+.sapling-card {
+  border-radius: 15px !important;
 }
 
 /* Preserve Circular Images */
