@@ -463,7 +463,7 @@ body::before {
 
 .bg-paper {
   background: rgba(244, 240, 232, .98);
-  border-radius: 15px;
+  border-radius: 0px !important;
   padding: 62px 48px;
   box-shadow: 0 32px 72px rgba(20, 16, 12, .18);
   border: 1px solid rgba(255, 255, 255, .58);
@@ -473,7 +473,7 @@ body::before {
   background: rgba(255, 255, 255, .04);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 15px;
+  border-radius: 0px !important;
   padding: 62px 48px;
 }
 
@@ -693,7 +693,7 @@ body::before {
 
 .page-about .core-philosophy-wrap .av-value-card {
   padding: 16px;
-  border-radius: 20px;
+  border-radius: 0 !important;
 }
 
 .page-about .core-philosophy-wrap .av-value-card h2 {
@@ -709,7 +709,7 @@ body::before {
 .page-about .av-value-card {
   background: rgba(244, 240, 232, .95);
   border: 1px solid rgba(255, 255, 255, .52);
-  border-radius: 15px;
+  border-radius: 0 !important;
   padding: 20px;
   box-shadow: 0 16px 36px rgba(20, 16, 12, .12);
 }

@@ -105,6 +105,7 @@ h6 em {
   color: var(--white);
   background: #000;
   overflow: hidden;
+  border-radius: 0 !important;
 }
 
 .farm-hero-bg {
@@ -116,6 +117,7 @@ h6 em {
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  border-radius: 0 !important;
 }
 
 /* The exact background fade behind text */

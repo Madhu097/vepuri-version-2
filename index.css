@@ -17,6 +17,7 @@
 section {
   content-visibility: auto;
   contain-intrinsic-size: 1px 500px;
+  border-radius: 0 !important;
 }
 
 #hero, nav, footer {
@@ -169,7 +170,8 @@ nav.scrolled {
   text-align: center;
   overflow: hidden;
   background: #ffe9c4;
-  color: #6b3828
+  color: #6b3828;
+  border-radius: 0 !important;
 }
 
 .hero-bg {
@@ -935,7 +937,7 @@ body.hero-ready .hero-metrics {
   left: 0;
   width: 84%;
   height: 450px;
-  border-radius: 10px;
+  border-radius: 0 !important;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0, 0, 0, .6)
 }
@@ -957,7 +959,7 @@ body.hero-ready .hero-metrics {
   object-fit: cover;
   transition: transform 8s ease;
   display: block;
-  border-radius: 20px;
+  border-radius: 0 !important;
 }
 
 .a-main:hover img {
@@ -979,7 +981,7 @@ body.hero-ready .hero-metrics {
   right: 0;
   width: 52%;
   height: 260px;
-  border-radius: 10px;
+  border-radius: 0 !important;
   overflow: hidden;
   box-shadow: 0 24px 60px var(--green);
   border: 3px solid var(--green)
@@ -1140,8 +1142,9 @@ body.hero-ready .hero-metrics {
 /* -- PRODUCTS -- */
 #products {
   padding: 110px 8% 120px;
-  background: #606c38;
-  position: relative
+  background: var(--green2) !important;
+  position: relative;
+  border-radius: 0px !important;
 }
 
 .prod-head {

@@ -77,14 +77,21 @@ footer a,
   font-family: var(--body-font);
 }
 
-/* Global Border Radius - Images & Cards */
-img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot):not(.award-img):not(.bh-card img),
-[class*="card"]:not(.bh-card),
-.pc-modern,
+/* Global Border Radius - Sharp Design Reset */
+img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot):not(.award-img):not(.bh-card img):not(.pc-modern img),
+[class*="card"]:not(.bh-card):not(.pc-modern),
 .dept-card,
 .bg-paper,
 .bg-glass,
 .sapling-card {
+  border-radius: 0 !important;
+}
+
+/* Specific Border Radius for Product Cards only */
+.pc-modern {
+  border-radius: 15px !important;
+}
+.pc-modern img {
   border-radius: 15px !important;
 }
 
