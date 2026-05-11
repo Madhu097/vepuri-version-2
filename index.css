@@ -923,7 +923,7 @@ body.hero-ready .hero-metrics {
 
 .farm-content {
   position: absolute;
-  top: 12%; /* Moved slightly up into the sky */
+  top: 12%;
   left: 50%;
   transform: translate(-50%, 0);
   text-align: center;
@@ -972,7 +972,11 @@ body.hero-ready .hero-metrics {
   font-weight: 700;
   text-transform: none;
   font-size: 0.75em;
-  margin-top: 8px;
+  margin-top: 18px;
+}
+
+.farm-title em:first-child {
+  margin-top: 0;
 }
 
 
@@ -3274,10 +3278,26 @@ body.hero-ready .hero-metrics {
 
   /* Farm Banner Small Mobile */
   .farm-banner {
-    height: 280px;
+    height: 300px;
   }
   .farm-content {
-    top: 10%;
+    top: 12%;
+    width: 95%;
+  }
+  .farm-kicker {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  .farm-title {
+    font-size: 26px !important;
+    line-height: 1.1;
+  }
+  .farm-title em {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+  .farm-title em:first-child {
+    margin-top: 0;
   }
 
 
