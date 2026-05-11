@@ -1,4 +1,16 @@
 (function () {
+  // -- GLOBAL LOADER --
+  const loaderEl = document.getElementById('loader');
+  function hideLoader() {
+    if (!loaderEl) return;
+    loaderEl.classList.add('gone');
+    document.body.classList.add('loaded');
+  }
+  window.addEventListener('load', () => setTimeout(hideLoader, 300));
+  // Fallback
+  window.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1500));
+  window.addEventListener('pageshow', hideLoader);
+
   const nav = document.getElementById('nav');
   const navLinks = document.getElementById('navLinks');
   const hbg = document.getElementById('hbg');

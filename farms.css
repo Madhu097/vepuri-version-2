@@ -1046,7 +1046,14 @@ h6 em {
     align-items: center;
     padding-top: 120px;
     padding-bottom: 80px;
+    z-index: 5;
   }
+
+  .farm-hero-content {
+    position: relative;
+    z-index: 20;
+  }
+
 
   .farm-hero-bg {
     object-position: center center;
@@ -1104,5 +1111,7 @@ h6 em {
 
   .farm-cta-wrap {
     margin-top: 50px;
+    position: relative;
+    z-index: 20;
   }
 }

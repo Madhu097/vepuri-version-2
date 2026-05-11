@@ -95,10 +95,42 @@
         gap: 15px !important;
       }
     }
+
+    /* B2B CTA Button Fix */
+    .b2b-cta-btn {
+      display: inline-block !important;
+      padding: 16px 48px !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      background: var(--cream) !important;
+      color: var(--green) !important;
+      border: 1.5px solid var(--cream) !important;
+      border-radius: 40px !important;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background 0.3s ease !important;
+      cursor: pointer !important;
+    }
+
+    .b2b-cta-btn:hover {
+      transform: scale(1.08) !important;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+      text-decoration: none !important;
+      background: #fff !important;
+    }
   </style>
 </head>
 
 <body class="page-b2b">
+  <!-- LOADER -->
+  <div id="loader">
+    <img class="ld-logo" src="assets/newlogo.png" alt="Vepuri Agro Products">
+    <div class="ld-track">
+      <div class="ld-fill"></div>
+    </div>
+  </div>
+
   <nav id="nav">
     <div class="nav-logo">
       <a href="index.html"><img src="assets/newlogo.png" alt="Vepuri Agro Products" loading="eager" decoding="async"></a>
@@ -226,7 +258,7 @@
           </div>
         </div>
         <div style="margin-top: 60px; text-align: center;">
-          <a href="index.html#enquiryForm" class="nav-btn" style="padding: 16px 48px; font-size: 15px; background: var(--cream) !important; color: var(--green) !important; border-color: var(--cream) !important; border-radius: 40px !important;">ENQUIRE NOW &rarr;</a>
+          <a href="index.html#contact" class="b2b-cta-btn">ENQUIRE NOW &rarr;</a>
         </div>
       </div>
 

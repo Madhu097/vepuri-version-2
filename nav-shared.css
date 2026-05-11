@@ -49,6 +49,104 @@ textarea {
   box-shadow: 0 4px 24px rgba(0, 0, 0, .14);
 }
 
+/* -- GLOBAL LOADER -- */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s, visibility 0.6s;
+}
+
+#loader.gone {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ld-logo {
+  width: clamp(200px, 65vw, 360px);
+  height: auto;
+  display: block;
+  opacity: 0;
+  animation: ldFadeUp 0.8s 0.2s forwards;
+}
+
+.ld-track {
+  width: 180px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 30px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ld-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: #606c38;
+  animation: ldProgress 2s infinite ease-in-out;
+}
+
+@keyframes ldFadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ldProgress {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}
+
+/* -- SKELETON UI UTILITY -- */
+.skeleton {
+  background-color: #1a1a1a;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0)
+  );
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 1.5s infinite;
+  border-radius: 15px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* Hide content during initial load to prevent FOUC */
+body:not(.loaded) .unified-section,
+body:not(.loaded) .farm-hero,
+body:not(.loaded) .b-hero,
+body:not(.loaded) .a-hero,
+body:not(.loaded) .p-main {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+body.loaded .unified-section,
+body.loaded .farm-hero,
+body.loaded .b-hero,
+body.loaded .a-hero,
+body.loaded .p-main {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 #nav .nav-logo {
   display: flex;
   align-items: center;
@@ -400,4 +498,24 @@ textarea {
     font-size: 13px;
     color: rgba(0, 0, 0, .85);
   }
+}
+body.loaded .skeleton {
+  animation: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  transition: background-color 0.4s ease;
+}
+
+/* Hide Hero on Load */
+body:not(.loaded) #hero,
+body:not(.loaded) .hero-inner {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+body.loaded #hero,
+body.loaded .hero-inner {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
