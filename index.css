@@ -6,10 +6,10 @@
   --brown2: #4c2318;
   --cream: #ffe9c4;
   --white: #ffffff;
-    --black: #0a0604;
-    --site-font: 'Cormorant Garamond', serif;
-    --body-font: 'Outfit', sans-serif;
-    --accent-font: 'Spectral', serif;
+  --black: #0a0604;
+  --site-font: 'Cormorant Garamond', serif;
+  --body-font: 'Outfit', sans-serif;
+  --accent-font: 'Spectral', serif;
   --kicker-color: #6b3828;
 }
 
@@ -20,7 +20,9 @@ section {
   border-radius: 0 !important;
 }
 
-#hero, nav, footer {
+#hero,
+nav,
+footer {
   content-visibility: visible;
 }
 
@@ -801,9 +803,9 @@ body.hero-ready .hero-metrics {
 
 #about .eye {
   color: var(--kicker-color) !important;
-   --site-font: 'Cormorant Garamond', serif;
-   --body-font: 'Outfit', sans-serif;
-  
+  --site-font: 'Cormorant Garamond', serif;
+  --body-font: 'Outfit', sans-serif;
+
 }
 
 #about::before {
@@ -1366,7 +1368,7 @@ body.hero-ready .hero-metrics {
 
 .pc-modern:hover .pc-title {
   margin-bottom: 12px;
-      color: var(--cream);
+  color: var(--cream);
 }
 
 .pc-text {
@@ -1385,12 +1387,18 @@ body.hero-ready .hero-metrics {
   padding-bottom: 40px;
 }
 
-#contact, #enquiryForm {
+#contact,
+#enquiryForm {
   scroll-margin-top: 100px;
 }
 
-.hero-inner { z-index: 10; }
-.hero-metrics { z-index: 5; }
+.hero-inner {
+  z-index: 10;
+}
+
+.hero-metrics {
+  z-index: 5;
+}
 
 .pc-enquire .arr {
   font-size: 16px;
@@ -2138,8 +2146,10 @@ body.hero-ready .hero-metrics {
 .office-maps {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px; /* Extremely tight gap */
-  margin: 10px 0; /* Minimal vertical margin */
+  gap: 10px;
+  /* Extremely tight gap */
+  margin: 10px 0;
+  /* Minimal vertical margin */
   width: 100%;
 }
 
@@ -2700,6 +2710,7 @@ body.hero-ready .hero-metrics {
       opacity: 0;
       transform: translateY(-14px)
     }
+
     to {
       opacity: 1;
       transform: translateY(0)
@@ -2913,6 +2924,7 @@ body.hero-ready .hero-metrics {
   .farm-banner {
     height: 360px;
   }
+
   .farm-content {
     top: 14%;
   }
@@ -2933,12 +2945,29 @@ body.hero-ready .hero-metrics {
 }
 
 @media(max-width:560px) {
-  h1 { font-size: 32px !important; }
-  h2 { font-size: 26px !important; }
-  h3 { font-size: 22px !important; }
-  h4 { font-size: 18px !important; }
-  h5 { font-size: 16px !important; }
-  h6 { font-size: 14px !important; }
+  h1 {
+    font-size: 32px !important;
+  }
+
+  h2 {
+    font-size: 26px !important;
+  }
+
+  h3 {
+    font-size: 22px !important;
+  }
+
+  h4 {
+    font-size: 18px !important;
+  }
+
+  h5 {
+    font-size: 16px !important;
+  }
+
+  h6 {
+    font-size: 14px !important;
+  }
 
   #hero {
     min-height: 100vh;
@@ -3052,22 +3081,27 @@ body.hero-ready .hero-metrics {
   .farm-banner {
     height: 300px;
   }
+
   .farm-content {
     top: 12%;
     width: 95%;
   }
+
   .farm-kicker {
     font-size: 11px;
     margin-bottom: 8px;
   }
+
   .farm-title {
     font-size: 26px !important;
     line-height: 1.1;
   }
+
   .farm-title em {
     font-size: 18px;
     margin-top: 12px;
   }
+
   .farm-title em:first-child {
     margin-top: 0;
   }
@@ -3742,11 +3776,11 @@ body.hero-ready .hero-metrics {
 }
 
 .dept-name {
-    font-size: 19px;
-    font-weight: 700;
-    color: #6b3828;
-    margin-bottom: 6px;
-  }
+  font-size: 19px;
+  font-weight: 700;
+  color: #6b3828;
+  margin-bottom: 6px;
+}
 
 .dept-role {
   font-size: 14px;
@@ -3879,6 +3913,7 @@ body.hero-ready .hero-metrics {
     grid-template-columns: 1fr;
   }
 }
+
 /* -- EXTRA SMALL DEVICES & FINAL POLISH -- */
 @media (max-width: 400px) {
   .hero-metrics {
@@ -3886,25 +3921,34 @@ body.hero-ready .hero-metrics {
     justify-content: center;
     gap: 15px;
   }
+
   .hero-metric {
     flex: 0 0 45%;
   }
+
   .hero-brand-main {
     font-size: 32px !important;
   }
+
   .nav-btn {
     padding: 8px 16px !important;
     font-size: 11px !important;
   }
-  .btn-p, .btn-o, .btn-light {
+
+  .btn-p,
+  .btn-o,
+  .btn-light {
     min-width: 140px !important;
     padding: 10px 16px !important;
     font-size: 9px !important;
   }
+
   .dept-card {
     padding: 20px !important;
   }
-  .h2, .h2-ch {
+
+  .h2,
+  .h2-ch {
     /* Standardized in typography-shared.css */
   }
 }

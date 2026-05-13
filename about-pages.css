@@ -235,7 +235,7 @@ body::before {
   width: 100%;
   aspect-ratio: 16/9;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 12px;
   margin-bottom: 14px;
 }
 

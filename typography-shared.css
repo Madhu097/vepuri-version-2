@@ -4,11 +4,22 @@
   --accent-font: 'Spectral', serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--site-font);
 }
 
-body, p, li, span, a, input, button {
+body,
+p,
+li,
+span,
+a,
+input,
+button {
   font-family: var(--body-font);
 }
 
@@ -77,6 +88,41 @@ footer a,
   font-family: var(--body-font);
 }
 
+/* ── SMOOTH IMAGE LOADING ─────────────────────────────────────────
+   Images fade in smoothly. Uses animation as a CSS-only fallback:
+   - Without JS: images appear after 300ms automatically
+   - With JS (.img-loaded): images fade in the moment they finish loading
+   This prevents permanently invisible images if JS is deferred/blocked.
+─────────────────────────────────────────────────────────────────── */
+@keyframes imgFadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+img {
+  animation: imgFadeIn 0.5s ease-in-out 0.3s both;
+  will-change: opacity;
+}
+
+img.img-loaded {
+  animation: none;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Instantly visible: hero, logos, above-fold, and eager-loaded images */
+.hero-bg-fallback,
+.hero-brand-logo,
+.ld-logo,
+.f-logo,
+#nav .nav-logo img,
+img[fetchpriority="high"],
+img[loading="eager"] {
+  animation: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
 /* Global Border Radius - Sharp Design Reset */
 img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot):not(.award-img):not(.bh-card img):not(.pc-modern img),
 [class*="card"]:not(.bh-card):not(.pc-modern),
@@ -91,16 +137,17 @@ img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot):not(.a
 .pc-modern {
   border-radius: 15px !important;
 }
+
 .pc-modern img {
   border-radius: 15px !important;
 }
 
 /* Preserve Circular Images */
-.mi-dot, 
-.a-badge, 
-.cb-n, 
-.cb, 
-.circle, 
+.mi-dot,
+.a-badge,
+.cb-n,
+.cb,
+.circle,
 .dot,
 .event-media img,
 .team-member-media img,
@@ -110,19 +157,34 @@ img:not(.mi-dot):not(.a-badge):not(.cb-n):not(.cb):not(.circle):not(.dot):not(.a
 
 /* RESPONSIVE: Standardize heading sizes for mobile */
 @media (max-width: 768px) {
-  .hero-title, .h2, .h2-ch, .farm-title,
-  .section-header h1, .section-header h2,
-  .a-hero h1, .av-copy h1, .team-gov-head h1,
-  .b-hero h1, .farm-hero h1, .op-head h2, .b-item-copy h2, 
-  .p-showcase h1, .journey-head h1 {
+
+  .hero-title,
+  .h2,
+  .h2-ch,
+  .farm-title,
+  .section-header h1,
+  .section-header h2,
+  .a-hero h1,
+  .av-copy h1,
+  .team-gov-head h1,
+  .b-hero h1,
+  .farm-hero h1,
+  .op-head h2,
+  .b-item-copy h2,
+  .p-showcase h1,
+  .journey-head h1 {
     font-size: 40px !important;
     line-height: 1.1 !important;
     letter-spacing: -0.01em !important;
   }
-  
-  h1 em, h2 em, h3 em,
-  .section-header h1 em, .section-header h2 em,
-  .a-hero h1 em, .av-copy h1 em {
+
+  h1 em,
+  h2 em,
+  h3 em,
+  .section-header h1 em,
+  .section-header h2 em,
+  .a-hero h1 em,
+  .av-copy h1 em {
     font-size: 0.9em !important;
   }
 }
