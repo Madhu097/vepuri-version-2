@@ -11,6 +11,29 @@
   window.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1500));
   window.addEventListener('pageshow', hideLoader);
 
+  // ── Anchor-hash re-scroll fix ─────────────────────────────────────────────
+  // content-visibility:auto collapses off-screen sections during initial load,
+  // so the browser's native hash scroll overshoots (e.g. #dept-contacts ends
+  // up at #enquiryForm). We wait for layout to stabilise then re-scroll.
+  function scrollToHash(hash) {
+    const target = document.querySelector(hash);
+    if (!target) return;
+    const NAV_HEIGHT = 85;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+  }
+
+  function fixHashScroll() {
+    const hash = window.location.hash;
+    if (!hash) return;
+    // First attempt after load + 2 animation frames (layout settled)
+    requestAnimationFrame(() => requestAnimationFrame(() => scrollToHash(hash)));
+    // Second attempt after 500ms (handles slow content-visibility expansion)
+    setTimeout(() => scrollToHash(hash), 500);
+  }
+
+  window.addEventListener('load', fixHashScroll);
+
   const nav = document.getElementById('nav');
   const navLinks = document.getElementById('navLinks');
   const hbg = document.getElementById('hbg');

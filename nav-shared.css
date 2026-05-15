@@ -49,6 +49,15 @@ textarea {
   box-shadow: 0 4px 24px rgba(0, 0, 0, .14);
 }
 
+/* ── Global anchor scroll offset ─────────────────────────────────────────────
+   The fixed nav is 75px tall. Every section/element that is an anchor target
+   needs scroll-margin-top so the nav doesn't cover the section heading when
+   the browser (or JS) scrolls to it.  Applied globally so all pages benefit.
+────────────────────────────────────────────────────────────────────────────── */
+[id] {
+  scroll-margin-top: 85px;
+}
+
 /* -- GLOBAL LOADER -- */
 #loader {
   position: fixed;

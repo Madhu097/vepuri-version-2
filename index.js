@@ -13,6 +13,28 @@ window.addEventListener('load', () => setTimeout(hideLoader, 220));
 window.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 900));
 window.addEventListener('pageshow', hideLoader);
 
+// ── Anchor-hash re-scroll fix ───────────────────────────────────────────────
+// content-visibility:auto collapses off-screen sections during initial load,
+// so the browser's native hash scroll overshoots (e.g. #dept-contacts → lands
+// at #enquiryForm). We fire two corrective scrolls after layout stabilises.
+function scrollToHash(hash) {
+  const target = document.querySelector(hash);
+  if (!target) return;
+  const NAV_HEIGHT = 85;
+  const top = target.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+}
+
+function fixHashScroll() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  // First attempt: after load + 2 animation frames (layout settled)
+  requestAnimationFrame(() => requestAnimationFrame(() => scrollToHash(hash)));
+  // Second attempt: after 500ms (handles slow content-visibility expansion)
+  setTimeout(() => scrollToHash(hash), 500);
+}
+window.addEventListener('load', fixHashScroll);
+
 const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
 const saveDataMode = Boolean(conn && (conn.saveData || /2g/.test(conn.effectiveType || '')));
@@ -119,11 +141,10 @@ animateHeroCounters();
 
 // -- LIVE COCONUT COUNTERS --
 (function initLiveCounters() {
-  const dailyEl = document.getElementById('liveDailyCount');
   const totalEl = document.getElementById('liveTotalCount');
-  if (!dailyEl || !totalEl) return;
+  if (!totalEl) return;
 
-  const DAILY_TARGET = 17000;
+  const DAILY_TARGET = 15000; // 15,000 coconuts broken per day (static display in hero)
   const BASE_TOTAL = 25000000; // 2.5 Crore — existing historical total
   const START_DATE = new Date(2026, 3, 25); // April 25, 2026 (month is 0-indexed)
 
@@ -144,13 +165,13 @@ animateHeroCounters();
     return rest + ',' + last3;
   }
 
-  function updateCounters() {
+  function updateTotalCounter() {
     const now = new Date();
     const currentTimeInSeconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-    
+
     const startSeconds = 6 * 3600; // 6 AM
     const endSeconds = 23 * 3600;  // 11 PM
-    
+
     let dailyCount = 0;
     if (currentTimeInSeconds >= endSeconds) {
       dailyCount = DAILY_TARGET;
@@ -165,7 +186,6 @@ animateHeroCounters();
     const completedDays = daysSinceStart();
     const currentTotal = BASE_TOTAL + (completedDays * DAILY_TARGET) + dailyCount;
 
-    dailyEl.textContent = formatIndian(dailyCount);
     totalEl.textContent = formatIndian(currentTotal);
   }
 
@@ -173,10 +193,10 @@ animateHeroCounters();
   function startCounterLoop() {
     const intervalMs = document.hidden ? 5000 : 1000;
     if (counterTimer) clearInterval(counterTimer);
-    counterTimer = setInterval(updateCounters, intervalMs);
+    counterTimer = setInterval(updateTotalCounter, intervalMs);
   }
 
-  updateCounters();
+  updateTotalCounter();
   startCounterLoop();
   document.addEventListener('visibilitychange', startCounterLoop);
 })();

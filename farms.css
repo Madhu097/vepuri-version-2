@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/aqua-grotesque');
+
 :root {
   --primary-green: #606c38;
   --dark-green: #283618;
@@ -149,12 +151,21 @@ h6 em {
   color: var(--cream);
 }
 
+/* Aqua Grotesque applied specifically to the hero heading */
+.farm-hero h1 em {
+  font-family: 'Aqua Grotesque', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: var(--cream) !important;
+  font-size: 3.2rem !important;
+}
+
 .farm-hero .h-line {
-  width: 80px;
-  height: 2px;
-  background: var(--primary-green);
+  width: 160px;
+  height: 3px;
+  background: var(--cream);
   margin-bottom: 30px;
-  opacity: 0.6;
+  opacity: 100%;
 }
 
 .farm-hero p {

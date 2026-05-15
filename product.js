@@ -1,4 +1,17 @@
 const productData = {
+  'frozen-grated-coconut': {
+    name: 'Frozen Grated Coconut',
+    category: 'Frozen Coconut Category',
+    description: 'Vepuri Frozen Grated Coconut is produced from carefully selected mature coconuts, processed under hygienic conditions and frozen immediately to preserve natural freshness, aroma, and texture. It delivers consistent quality and ready-to-use convenience for large-scale food preparation and product applications. Designed for efficiency and reliability, it ensures uniform performance across batches while reducing preparation time and wastage.',
+    image: 'assets/products/frozen%20gated.png',
+    imageAlt: 'Frozen grated coconut',
+    useCases: [
+      'Freshness Preserved – Frozen immediately to retain natural taste and texture.',
+      'Consistent Quality – Uniform moisture and texture for reliable usage.',
+      'Ready-to-Use Convenience - Eliminates the need for manual grating and preparation.',
+      'Versatile Application - Suitable for cooking, baking, and food processing.'
+    ]
+  },
   'virgin-coconut-oil': {
     name: 'Virgin Coconut Oil',
     category: 'Coconut Oil Category',
@@ -9,6 +22,44 @@ const productData = {
       '100% Cold-Pressed & Unrefined – No heat, no chemicals.',
       'Supports energy & metabolism.',
       'Multipurpose Use – Ideal for cooking, skincare & haircare.'
+    ]
+  },
+  'coconut-blossom-sugar': {
+    name: 'Coconut Blossom Sugar',
+    category: 'Coconut Blossom Sweetener Category',
+    description: "Vepuri Coconut Sugar is a natural sweetener crafted from the pure nectar of coconut blossoms. With a delicious caramel-like flavor, it's the perfect healthier alternative to refined sugar for cooking, baking, or beverages.",
+    image: 'assets/products/blossom%20sugar.png',
+    imageAlt: 'Coconut blossom sugar image',
+    useCases: [
+      '100% Natural & Unrefined – No artificial additives.',
+      'Low Glycemic Index – Better blood sugar management.',
+      'Rich in Nutrients – Contains minerals like iron, potassium, and zinc.'
+    ]
+  },
+  'tender-coconut-water': {
+    name: 'Tender Coconut Water',
+    category: 'Beverage Category',
+    description: 'Vepuri Tender Coconut Water is sourced from high-quality coconuts and processed to maintain its natural taste, clarity, and hydration properties. It serves as a clean and reliable base for beverage applications and direct consumption. Designed for consistency and scalability, it meets the requirements of both retail and bulk supply.',
+    image: 'assets/products/water.png',
+    imageAlt: 'Tender coconut water',
+    useCases: [
+      'Naturally Refreshing - Retains original taste and hydration properties.',
+      'Consistent Quality - Standardized processing ensures uniform output.',
+      'Scalable Supply - Suitable for bulk distribution and product development.',
+      'Flexible Usage - Ideal for beverages and functional drink formulations.'
+    ]
+  },
+  'coconut-chips': {
+    name: 'Coconut Chips',
+    category: 'Snack Category',
+    description: 'Vepuri Coconut Chips are produced from sliced coconut kernel, processed to achieve a crisp texture while retaining natural flavor. Designed for consistency and shelf stability, they are suitable for both standalone consumption and ingredient use. They support a wide range of applications across snack and food product segments.',
+    image: 'assets/products/chips.png',
+    imageAlt: 'Coconut chips',
+    useCases: [
+      'Crisp Texture - Consistent crunch and natural taste.',
+      'Shelf-Stable Product - Longer usability with minimal storage challenges.',
+      'Versatile Usage - Suitable for snacks, toppings, and food products.',
+      'Ready-to-Use - Convenient for both retail and bulk applications.'
     ]
   },
   'coconut-neera': {
@@ -37,44 +88,6 @@ const productData = {
       'Versatile Sweetener – Perfect for tea, toast, pancakes, or baking.'
     ]
   },
-  'coconut-caned-milk': {
-    name: 'Coconut Caned Milk',
-    category: 'Coconut Milk Category',
-    description: 'Vepuri Coconut Milk Powder is a creamy, dairy-free alternative made from pure coconut extract. Just mix with warm water to enjoy rich, aromatic coconut milk anytime, anywhere. Ideal for cooking, baking, or beverages – it’s coconut convenience without compromise.',
-    image: 'assets/products/milk.png',
-    imageAlt: 'Coconut milk product image',
-    useCases: [
-      '100% Dairy-Free – Perfect for vegans and lactose-intolerant diets.',
-      'Rich & Creamy – Delivers authentic coconut flavor in every spoon.',
-      'Long Shelf Life – Convenient and easy to store.',
-      'Versatile Use – Great for curries, smoothies, desserts, and more.'
-    ]
-  },
-  'coconut-blossom-sugar': {
-    name: 'Coconut Blossom Sugar',
-    category: 'Coconut Blossom Sweetener Category',
-    description: "Vepuri Coconut Sugar is a natural sweetener crafted from the pure nectar of coconut blossoms. With a delicious caramel-like flavor, it's the perfect healthier alternative to refined sugar for cooking, baking, or beverages.",
-    image: 'assets/products/blossom%20sugar.png',
-    imageAlt: 'Coconut blossom sugar image',
-    useCases: [
-      '100% Natural & Unrefined – No artificial additives.',
-      'Low Glycemic Index – Better blood sugar management.',
-      'Rich in Nutrients – Contains minerals like iron, potassium, and zinc.'
-    ]
-  },
-  'frozen-grated-coconut': {
-    name: 'Frozen Grated Coconut',
-    category: 'Frozen Coconut Category',
-    description: 'Vepuri Frozen Grated Coconut is produced from carefully selected mature coconuts, processed under hygienic conditions and frozen immediately to preserve natural freshness, aroma, and texture. It delivers consistent quality and ready-to-use convenience for large-scale food preparation and product applications. Designed for efficiency and reliability, it ensures uniform performance across batches while reducing preparation time and wastage.',
-    image: 'assets/products/frozen%20gated.png',
-    imageAlt: 'Frozen grated coconut',
-    useCases: [
-      'Freshness Preserved – Frozen immediately to retain natural taste and texture.',
-      'Consistent Quality – Uniform moisture and texture for reliable usage.',
-      'Ready-to-Use Convenience - Eliminates the need for manual grating and preparation.',
-      'Versatile Application - Suitable for cooking, baking, and food processing.'
-    ]
-  },
   'frozen-tender-coconut': {
     name: 'Frozen Tender Coconut',
     category: 'Frozen Coconut Category',
@@ -88,21 +101,8 @@ const productData = {
       'Versatile Application - Ideal for desserts, beverages, and food products.'
     ]
   },
-  'tender-coconut-water': {
-    name: 'Tender Coconut Water',
-    category: 'Beverage Category',
-    description: 'Vepuri Tender Coconut Water is sourced from high-quality coconuts and processed to maintain its natural taste, clarity, and hydration properties. It serves as a clean and reliable base for beverage applications and direct consumption. Designed for consistency and scalability, it meets the requirements of both retail and bulk supply.',
-    image: 'assets/products/water.png',
-    imageAlt: 'Tender coconut water',
-    useCases: [
-      'Naturally Refreshing - Retains original taste and hydration properties.',
-      'Consistent Quality - Standardized processing ensures uniform output.',
-      'Scalable Supply - Suitable for bulk distribution and product development.',
-      'Flexible Usage - Ideal for beverages and functional drink formulations.'
-    ]
-  },
   'coconut-milk-tin': {
-    name: 'Coconut Milk (Canned)',
+    name: 'Coconut Milk',
     category: 'Canned Coconut Category',
     description: 'Vepuri Coconut Milk is extracted from high-quality coconut kernel and processed to deliver a smooth, rich, and consistent texture. Designed for both culinary and industrial use, it offers reliable performance across a wide range of applications while maintaining authentic coconut flavor. Engineered for convenience and scalability, it ensures ease of use, longer shelf stability, and consistent output in every batch.',
     image: 'assets/products/milk.png',
@@ -115,7 +115,7 @@ const productData = {
     ]
   },
   'coconut-cream-tin': {
-    name: 'Coconut Cream (Canned)',
+    name: 'Coconut Cream',
     category: 'Canned Coconut Category',
     description: 'Vepuri Coconut Cream is a concentrated product with higher fat content, offering a thicker texture and richer taste. It is designed for applications that require enhanced creaminess and depth of flavor. Processed under controlled conditions, it ensures consistent quality and performance across premium food preparations and industrial usage.',
     image: 'assets/products/Coconut-Cream.jpg',
@@ -128,7 +128,7 @@ const productData = {
     ]
   },
   'coconut-yogurt': {
-    name: 'Coconut Yogurt',
+    name: 'Yogurt',
     category: 'Plant-Based Dairy Category',
     description: 'Vepuri Coconut Yogurt is a plant-based alternative developed from coconut, offering a smooth texture and balanced flavor profile. It is designed to meet the growing demand for dairy-free and functional food options. Suitable for both direct consumption and product integration, it aligns with modern dietary preferences and evolving market needs.',
     image: 'assets/products/yogurt.png',
@@ -139,25 +139,12 @@ const productData = {
       'Modern Food Application - Aligned with plant-based product trends.',
       'Flexible Usage - Suitable for direct consumption and product development.'
     ]
-  },
-  'coconut-chips': {
-    name: 'Coconut Chips',
-    category: 'Snack Category',
-    description: 'Vepuri Coconut Chips are produced from sliced coconut kernel, processed to achieve a crisp texture while retaining natural flavor. Designed for consistency and shelf stability, they are suitable for both standalone consumption and ingredient use. They support a wide range of applications across snack and food product segments.',
-    image: 'assets/products/chips.png',
-    imageAlt: 'Coconut chips',
-    useCases: [
-      'Crisp Texture - Consistent crunch and natural taste.',
-      'Shelf-Stable Product - Longer usability with minimal storage challenges.',
-      'Versatile Usage - Suitable for snacks, toppings, and food products.',
-      'Ready-to-Use - Convenient for both retail and bulk applications.'
-    ]
   }
 };
 
 function getProductKey() {
   const params = new URLSearchParams(window.location.search);
-  return params.get('item') || 'virgin-coconut-oil';
+  return params.get('item') || 'frozen-grated-coconut';
 }
 
 function getProductImage(key, fallbackSrc, fallbackAlt) {

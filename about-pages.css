@@ -2238,9 +2238,15 @@ body::before {
   grid-row: span 2;
 }
 
-.fc-4 {
+/* fc-4 split into two single-row cards */
+.fc-4a {
   grid-column: span 1;
-  grid-row: span 2;
+  grid-row: span 1;
+}
+
+.fc-4b {
+  grid-column: span 1;
+  grid-row: span 1;
 }
 .fc-5 img {
   object-position: bottom;
@@ -2248,6 +2254,19 @@ body::before {
 .fc-6 {
   grid-column: span 1;
   grid-row: span 1;
+}
+
+.fc-7 {
+  background: #fff;
+  
+}
+
+.fc-7 img {
+  width: 100%;
+  height: 100%;
+  object-fit :cover ;  
+  object-position: center center;
+  display: block;
 }
 
 .fc-8 {
