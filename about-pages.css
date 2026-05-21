@@ -625,7 +625,7 @@ body::before {
   object-fit: cover;
   display: block;
   filter: saturate(.95) contrast(1.04);
-  border-radius: 20px;
+  border-radius: 10px !important;
   transform: scaleX(-1);
 }
 
@@ -970,10 +970,14 @@ body::before {
 
   .page-about .av-media-stage,
   .page-about .av-main-img {
-    max-height: 360px;
+    max-height: 800px;
+    aspect-ratio: 2/3;
   }
 
-  .page-about .av-media-stage,
+  .page-about .av-main-img img {
+    border-radius: 10px !important;
+  }
+
   .a-hero-media,
   .page-certified-awarded .ca-media-stage {
     height: auto;
@@ -1120,7 +1124,8 @@ body::before {
 
   .page-about .av-media-stage,
   .page-about .av-main-img {
-    max-height: 260px;
+    max-height: 750px;
+    aspect-ratio: 2/3;
   }
 
   .page-about .av-actions {
