@@ -752,7 +752,7 @@
     </section>
 
     <section class="summary-row">
-      <div class="summary-card"><strong id="liveDailyCount">0</strong><span>Coconut Breaking / Day</span></div>
+      <div class="summary-card"><strong>15,000</strong><span>Coconut Breaking / Day</span></div>
       <div class="summary-card"><strong id="liveTotalCount">0</strong><span>Total Coconut Breaking</span></div>
       <div class="summary-card"><strong class="count" data-target="500" data-suffix="+">0</strong><span>Farm
           Partners</span></div>
@@ -862,11 +862,10 @@
 
     // -- LIVE COCONUT COUNTERS (same as index page) --
     (function initLiveCounters() {
-      const dailyEl = document.getElementById('liveDailyCount');
       const totalEl = document.getElementById('liveTotalCount');
-      if (!dailyEl || !totalEl) return;
+      if (!totalEl) return;
 
-      const DAILY_TARGET = 17000;
+      const DAILY_TARGET = 15000;
       const BASE_TOTAL = 25000000; // 2.5 Crore — existing historical total
       const START_DATE = new Date(2026, 3, 25); // April 25, 2026 (month is 0-indexed)
       function daysSinceStart() {
@@ -907,7 +906,6 @@
         const completedDays = daysSinceStart();
         const currentTotal = BASE_TOTAL + (completedDays * DAILY_TARGET) + dailyCount;
 
-        dailyEl.textContent = formatIndian(dailyCount);
         totalEl.textContent = formatIndian(currentTotal);
       }
 

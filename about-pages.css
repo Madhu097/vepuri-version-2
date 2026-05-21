@@ -626,6 +626,7 @@ body::before {
   display: block;
   filter: saturate(.95) contrast(1.04);
   border-radius: 20px;
+  transform: scaleX(-1);
 }
 
 .page-about .av-float-card {
@@ -1581,11 +1582,13 @@ body::before {
   transition: transform 0.4s ease;
 }
 
-.cert-tile:hover .cert-media img {
+.cert-tile:hover .cert-media img,
+.cert-tile.active-hover .cert-media img {
   transform: scale(1.1);
 }
 
-.cert-tile:hover {
+.cert-tile:hover,
+.cert-tile.active-hover {
   background: #fff;
   transform: translateY(-5px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05);

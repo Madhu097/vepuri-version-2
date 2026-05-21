@@ -53,16 +53,22 @@ function initHeroVideoPlayback() {
     return;
   }
 
+  const handleVideoReady = () => {
+    heroVideo.classList.add('ready');
+  };
+
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         heroVideo.play().catch(() => { });
         // Fade in when ready
-        heroVideo.addEventListener('canplaythrough', () => {
-          heroVideo.classList.add('ready');
-        }, { once: true });
+        if (heroVideo.readyState >= 2) {
+          handleVideoReady();
+        } else {
+          heroVideo.addEventListener('loadeddata', handleVideoReady, { once: true });
+        }
         // Fallback if event doesn't fire
-        setTimeout(() => heroVideo.classList.add('ready'), 2000);
+        setTimeout(handleVideoReady, 1000);
       } else {
         heroVideo.pause();
       }
@@ -241,18 +247,78 @@ document.addEventListener('click', e => {
     }
   }
 
-  // Smooth scroll for internal anchors
-  if (href && href.startsWith('#') && href.length > 1) {
-    const el = document.querySelector(href);
+  // Extract hash if it points to an anchor on the same page
+  let hash = '';
+  if (href) {
+    if (href.startsWith('#')) {
+      hash = href;
+    } else if (href.includes('#')) {
+      try {
+        const url = new URL(target.href);
+        const currentUrl = new URL(window.location.href);
+        const isSamePage = url.origin === currentUrl.origin && 
+          (url.pathname === currentUrl.pathname || 
+           url.pathname.replace(/^\/|\/$/g, '') === currentUrl.pathname.replace(/^\/|\/$/g, '') ||
+           (url.pathname.endsWith('index.html') && currentUrl.pathname.endsWith('index.html')) ||
+           (url.pathname.endsWith('/') && currentUrl.pathname.endsWith('index.html')) ||
+           (url.pathname.endsWith('index.html') && currentUrl.pathname.endsWith('/')));
+        
+        if (isSamePage) {
+          hash = url.hash;
+        }
+      } catch (err) {
+        // Fallback
+      }
+    }
+  }
+
+  // Smooth scroll for internal anchors with content-visibility auto correction
+  if (hash && hash.length > 1) {
+    const el = document.querySelector(hash);
     if (el) {
       e.preventDefault();
-      const offset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      const NAV_HEIGHT = 85;
+      
+      // Perform initial scroll calculation
+      let targetTop = el.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
+      window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      
+      // Dynamically correct the scroll destination as off-screen content-visibility sections expand
+      let attempts = 0;
+      const scrollCorrectionTimer = setInterval(() => {
+        attempts++;
+        const currentTop = el.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
+        if (Math.abs(currentTop - targetTop) > 3) {
+          targetTop = currentTop;
+          window.scrollTo({ top: targetTop, behavior: 'smooth' });
+        }
+        if (attempts >= 10) {
+          clearInterval(scrollCorrectionTimer);
+        }
+      }, 80);
     }
   }
 });
+
+// ── Anchor-hash re-scroll fix for Index Page ──────────────────────────────────
+function scrollToHash(hash) {
+  const target = document.querySelector(hash);
+  if (!target) return;
+  const NAV_HEIGHT = 85;
+  const top = target.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+}
+
+function fixHashScroll() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  // First attempt after load + 2 animation frames (layout settled)
+  requestAnimationFrame(() => requestAnimationFrame(() => scrollToHash(hash)));
+  // Second attempt after 500ms (handles slow content-visibility expansion)
+  setTimeout(() => scrollToHash(hash), 500);
+}
+
+window.addEventListener('load', fixHashScroll);
 
 function applyProductImagesFromConfig() {
   const imageMap = window.PRODUCT_IMAGE_MAP || {};

@@ -42,6 +42,7 @@ textarea {
   font-family: var(--body-font);
 }
 
+
 h1,
 h2,
 h3,
@@ -1362,9 +1363,9 @@ body.hero-ready .hero-metrics {
   color: var(--cream);
   text-transform: uppercase;
   transition: margin-bottom .4s ease;
-  white-space: nowrap !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
 }
 
 .pc-title em {
@@ -2534,7 +2535,7 @@ body.hero-ready .hero-metrics {
 /* -- MOBILE -- */
 @media(max-width:1080px) {
   #hero {
-    min-height: 95vh;
+    min-height: 90vh;
     padding: 112px 6% 84px
   }
 
@@ -2982,7 +2983,7 @@ body.hero-ready .hero-metrics {
   }
 
   #hero {
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 104px 6% 72px
   }
 
@@ -3962,5 +3963,13 @@ body.hero-ready .hero-metrics {
   .h2,
   .h2-ch {
     /* Standardized in typography-shared.css */
+  }
+}
+
+@media (max-width: 1080px) {
+  .pc-title {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
   }
 }
