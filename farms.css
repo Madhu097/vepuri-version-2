@@ -67,7 +67,7 @@ h6 em {
   transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.rv.on {
+.rv.on, .rv.visible {
   opacity: 1;
   transform: translateY(0);
 }
