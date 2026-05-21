@@ -76,8 +76,10 @@
     // Close menu if clicking any link on mobile (except submenus)
     if (isMobileNav() && !target.closest('.has-submenu')) {
       if (navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        hbg.classList.remove('active');
+        setTimeout(() => {
+          navLinks.classList.remove('open');
+          hbg.classList.remove('active');
+        }, 150);
       }
     }
 

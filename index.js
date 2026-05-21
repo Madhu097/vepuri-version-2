@@ -242,8 +242,10 @@ document.addEventListener('click', e => {
     const navLinks = document.getElementById('navLinks');
     const hbg = document.getElementById('hbg');
     if (navLinks && navLinks.classList.contains('open')) {
-      navLinks.classList.remove('open');
-      if (hbg) hbg.classList.remove('active');
+      setTimeout(() => {
+        navLinks.classList.remove('open');
+        hbg.classList.remove('active');
+      }, 150);
     }
   }
 
