@@ -124,12 +124,26 @@
     }
   }
 
+  /* ── 6. SERVICE WORKER REGISTRATION (FULL PAGE CACHING) ──── */
+  function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(function (reg) {
+          console.log('[Service Worker] Registration successful with scope:', reg.scope);
+        })
+        .catch(function (err) {
+          console.warn('[Service Worker] Registration failed:', err);
+        });
+    }
+  }
+
   /* ── INIT ─────────────────────────────────────────────── */
   function run() {
     optimizeImages();
     setupImageReveal();
     optimizeVideos();
     optimizeIframes();
+    registerServiceWorker();
   }
 
   if (document.readyState === 'loading') {
