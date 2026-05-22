@@ -15,15 +15,12 @@
 
 /* PERFORMANCE: Render segments only when visible */
 section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 500px;
   border-radius: 0 !important;
 }
 
 #hero,
 nav,
 footer {
-  content-visibility: visible;
 }
 
 * {
@@ -114,8 +111,6 @@ body {
 #dept-contacts,
 #contact,
 footer {
-  content-visibility: auto;
-  contain-intrinsic-size: 800px;
 }
 
 /* Offset anchor scroll targets for the fixed 75px nav */
@@ -126,7 +121,8 @@ footer {
 #achievements,
 #contract-mfg,
 #dept-contacts,
-#contact {
+#contact,
+#enquiryForm {
   scroll-margin-top: 80px;
 }
 
