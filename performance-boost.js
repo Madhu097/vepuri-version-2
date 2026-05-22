@@ -137,6 +137,27 @@
     }
   }
 
+  /* ── 7. HOVER INTENT PREFETCHING (INSTANT PAGE SWITCH) ── */
+  function setupHoverPrefetch() {
+    var prefetched = new Set();
+    document.addEventListener('mouseover', function(e) {
+      var a = e.target.closest('a');
+      if (a && a.href && a.origin === window.location.origin) {
+        var url = a.href;
+        // Skip same-page anchors
+        if (url.includes('#') && url.split('#')[0] === window.location.href.split('#')[0]) return;
+        
+        if (!prefetched.has(url)) {
+          prefetched.add(url);
+          var link = document.createElement('link');
+          link.rel = 'prefetch';
+          link.href = url;
+          document.head.appendChild(link);
+        }
+      }
+    }, { passive: true });
+  }
+
   /* ── INIT ─────────────────────────────────────────────── */
   function run() {
     optimizeImages();
@@ -144,12 +165,17 @@
     optimizeVideos();
     optimizeIframes();
     registerServiceWorker();
+    setupHoverPrefetch();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run, { once: true });
+    document.addEventListener('DOMContentLoaded', function() {
+      run();
+      setTimeout(markLoaded, 50);
+    }, { once: true });
   } else {
     run();
+    markLoaded();
   }
 
   window.addEventListener('load', markLoaded, { once: true });

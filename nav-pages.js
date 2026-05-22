@@ -6,9 +6,8 @@
     loaderEl.classList.add('gone');
     document.body.classList.add('loaded');
   }
-  window.addEventListener('load', () => setTimeout(hideLoader, 300));
-  // Fallback
-  window.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 1500));
+  window.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 50));
+  window.addEventListener('load', hideLoader);
   window.addEventListener('pageshow', hideLoader);
 
 

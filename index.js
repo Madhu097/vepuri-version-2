@@ -8,9 +8,8 @@ function hideLoader() {
   // Keep vertical scrolling enabled even if any future style changes attempt to lock it.
   document.body.style.overflowY = 'auto';
 }
-window.addEventListener('load', () => setTimeout(hideLoader, 220));
-// Fallback: never let loader block interaction for too long.
-window.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 900));
+window.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 50));
+window.addEventListener('load', hideLoader);
 window.addEventListener('pageshow', hideLoader);
 
 
